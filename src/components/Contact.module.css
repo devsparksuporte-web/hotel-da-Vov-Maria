@@ -1,0 +1,72 @@
+.contact {
+    padding: 100px 0;
+    font-family: var(--font-montserrat);
+}
+
+.contactCard {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    background: var(--white);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.contactInfo {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 60px;
+}
+
+.contactInfo h2 {
+    color: var(--white);
+    margin-bottom: 10px;
+    font-family: var(--font-playfair);
+}
+
+.contactList {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.contactList li {
+    margin-bottom: 15px;
+}
+
+.contactForm {
+    padding: 60px;
+}
+
+.contactForm input, .contactForm textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-family: inherit;
+}
+
+.btnSubmit {
+    padding: 15px 40px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    width: 100%;
+}
+
+.btnSubmit:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 968px) {
+    .contactCard {
+        grid-template-columns: 1fr;
+    }
+    .contactInfo, .contactForm {
+        padding: 40px 20px;
+    }
+}
