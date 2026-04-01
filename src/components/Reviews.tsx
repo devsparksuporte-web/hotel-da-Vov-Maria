@@ -12,7 +12,7 @@ export default function Reviews() {
         <div className={styles.reviewsGrid}>
           <div className={styles.reviewCard}>
             <div className={styles.reviewStars}>★★★★★</div>
-            <p className={styles.reviewText}>"Me senti em casa desde o primeiro momento. O café da manhã é incrível e a dona Maria é uma pessoa maravilhosa. Já marquei para voltar no próximo feriado!"</p>
+            <p className={styles.reviewText}>“Eu e minha família adoramos! Desde o primeiro momento nos sentimos em casa. O café da manhã é maravilhoso e a dona Maria é um amor de pessoa. Já até combinamos de voltar no próximo feriado!” 😊</p>
             <div className={styles.reviewAuthor}>
               <div className={styles.avatar}>S</div>
               <div className={styles.authorInfo}>
