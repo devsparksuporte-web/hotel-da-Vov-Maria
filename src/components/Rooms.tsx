@@ -1,73 +1,33 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { supabase } from '@/lib/supabase';
+import { useState } from 'react';
 import { Room } from '@/lib/types/database';
 import BookingSystem from './BookingSystem';
 import styles from './Rooms.module.css';
 
+const ROOMS: Room[] = [
+  {
+    id: '1',
+    name: 'Quarto Standard',
+    description: 'Aconchegante e funcional, perfeito para viajantes que buscam conforto e bom custo-benefício. Inclui cama de casal, ar-condicionado e banheiro privativo.',
+    price_per_night: 180,
+    capacity: 2,
+    image_url: '🛏️',
+    is_available: true,
+  },
+  {
+    id: '2',
+    name: 'Suíte Família',
+    description: 'Espaçosa e bem equipada para famílias ou casais. Possui camas extras, frigobar, varanda e todo o aconchego da Vovó Maria.',
+    price_per_night: 280,
+    capacity: 4,
+    image_url: '🛎️',
+    is_available: true,
+  },
+];
+
 export default function Rooms() {
-  const t = useTranslations('Rooms');
-  const [rooms, setRooms] = useState<Room[]>([]);
-  const [loading, setLoading] = useState(true);
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
-
-  useEffect(() => {
-    async function fetchRooms() {
-      try {
-        // Skip if using placeholder credentials
-        const isConfigured = 
-          process.env.NEXT_PUBLIC_SUPABASE_URL && 
-          !process.env.NEXT_PUBLIC_SUPABASE_URL.includes('your-project-id');
-
-        if (!isConfigured) {
-          throw new Error('Supabase not configured');
-        }
-
-        const { data, error } = await supabase
-          .from('rooms')
-          .select('*')
-          .eq('is_available', true);
-
-        if (error) throw error;
-        if (data && data.length > 0) {
-          setRooms(data);
-        } else {
-          throw new Error('No rooms found');
-        }
-      } catch (err: any) {
-        // Only log real errors, not the "not configured" or "no rooms" ones
-        if (err.message !== 'Supabase not configured' && err.message !== 'No rooms found') {
-          console.error('Error fetching rooms:', err.message || err);
-        }
-        setRooms([
-          {
-            id: '1',
-            name: 'Quarto Standard',
-            description: 'Aconchegante e funcional, perfeito para viajantes que buscam conforto e bom custo-benefício.',
-            price_per_night: 180,
-            capacity: 2,
-            image_url: '🛏️',
-            is_available: true
-          },
-          {
-            id: '2',
-            name: 'Suíte Família',
-            description: 'Espaçosa e bem equipada, ideal para famílias ou casais que desejam mais conforto.',
-            price_per_night: 280,
-            capacity: 4,
-            image_url: '🛎️',
-            is_available: true
-          }
-        ]);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchRooms();
-  }, []);
 
   const getEmoji = (image_url: string) => {
     if (image_url.length <= 2) return image_url;
@@ -85,12 +45,7 @@ export default function Rooms() {
       </div>
 
       <div className={styles.roomsGrid}>
-        {loading ? (
-          <div style={{ color: 'var(--gold-pale)', gridColumn: '1/-1', textAlign: 'center', padding: '3rem' }}>
-            Carregando quartos maravilhosos...
-          </div>
-        ) : (
-          rooms.map((room) => (
+        {ROOMS.map((room: Room) => (
             <div key={room.id} className={styles.roomCard}>
               <div className={styles.roomImg}>
                 {getEmoji(room.image_url)}
@@ -121,9 +76,8 @@ export default function Rooms() {
                 </div>
               </div>
             </div>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
 
       {selectedRoom && (
         <div style={{
