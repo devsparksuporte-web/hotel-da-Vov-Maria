@@ -59,15 +59,6 @@ export default function Rooms() {
             capacity: 4,
             image_url: '🛎️',
             is_available: true
-          },
-          {
-            id: '3',
-            name: 'Chalé Especial',
-            description: 'Nosso espaço mais charmoso, com varanda privativa e vista para o jardim.',
-            price_per_night: 380,
-            capacity: 2,
-            image_url: '🌿',
-            is_available: true
           }
         ]);
       } finally {
@@ -148,13 +139,13 @@ export default function Rooms() {
         }}>
           <div style={{
             position: 'relative',
-            backgroundColor: 'var(--warm-white)',
+            backgroundColor: '#fff',
             width: '100%',
-            maxWidth: '900px',
+            maxWidth: '640px',
             maxHeight: '90vh',
             overflowY: 'auto',
-            borderRadius: '4px',
-            padding: '1rem'
+            borderRadius: '8px',
+            padding: '2.5rem'
           }}>
             <button 
               onClick={() => setSelectedRoom(null)}
