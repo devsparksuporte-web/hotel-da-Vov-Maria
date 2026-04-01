@@ -4,27 +4,16 @@ export default function Contact() {
   return (
     <section id="reserva" className={styles.contactSection}>
       <div className={styles.contactInner}>
-        <p className="section-label" style={{ color: 'var(--gold)' }}>Faça sua reserva</p>
-        <h2 className="section-title" style={{ color: 'white' }}>Reserve sua <em>estadia</em></h2>
-        <p>Preencha os dados abaixo e nossa equipe entrará em contato para confirmar a disponibilidade e todos os detalhes da sua estadia.</p>
+        <p className="section-label" style={{ color: 'var(--gold)' }}>Nossa Estrutura</p>
+        <h2 className="section-title" style={{ color: 'white' }}>Uma extensão da sua <em>casa</em></h2>
+        <p>Sinta-se em casa! Nosso espaço foi criado para oferecer momentos inesquecíveis, com churrasqueira, piscina refrescante e vários cantinhos para você relaxar. Desfrute da melhor infraestrutura para a sua família.</p>
         
-        <form className={styles.reservaForm}>
-          <input type="text" placeholder="Seu nome completo" required />
-          <input type="tel" placeholder="WhatsApp / Telefone" required />
-          <input type="date" placeholder="Check-in" required />
-          <input type="date" placeholder="Check-out" required />
-          <select required>
-            <option value="">Tipo de quarto</option>
-            <option value="standard">Quarto Standard</option>
-            <option value="familia">Suíte Família</option>
-            <option value="chale">Chalé Especial</option>
-          </select>
-          <input type="number" placeholder="Nº de hóspedes" min="1" max="6" required />
-        </form>
-        
-        <a href="#acomodacoes" className="btn-primary" style={{ animation: 'pulse 2.5s ease-in-out infinite', textDecoration: 'none', display: 'inline-block' }}>
-          ✦ Solicitar Reserva
-        </a>
+        <div className={styles.galleryGrid}>
+          <img src="/images/lazer/foto-1.jpg" alt="Área de Lazer 1" />
+          <img src="/images/lazer/foto-2.jpg" alt="Área de Lazer 2" />
+          <img src="/images/lazer/foto-3.jpg" alt="Piscina da Pousada" />
+          <img src="/images/lazer/foto-4.jpg" alt="Piscina e Churrasqueira" />
+        </div>
 
 
         <div className={styles.mapContainer}>
