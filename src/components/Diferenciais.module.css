@@ -1,0 +1,54 @@
+.diferenciaisSection {
+  background: var(--warm-white);
+  padding: 5rem 0;
+}
+
+.diferenciaisInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.diferenciaisGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.diferencialItem {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid rgba(107,15,43,0.1);
+  border-radius: 4px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.diferencialItem:hover {
+  box-shadow: 0 12px 30px rgba(107, 15, 43, 0.1);
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.diferencialIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.diferencialItem h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--crimson);
+  margin-bottom: 0.75rem;
+}
+
+.diferencialItem p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #6a4a38;
+}
+
+@media (max-width: 768px) {
+  .diferenciaisGrid { grid-template-columns: 1fr; }
+}

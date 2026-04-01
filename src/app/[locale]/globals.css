@@ -1,0 +1,200 @@
+:root {
+  --crimson: #6B0F2B;
+  --crimson-dark: #4A0A1E;
+  --crimson-light: #8B1A3A;
+  --gold: #C9A227;
+  --gold-light: #E8C547;
+  --gold-pale: #F5E6A3;
+  --cream: #FDF6E3;
+  --warm-white: #FAF4E8;
+  --text-dark: #2A1510;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-lato), sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-playfair {
+  font-family: var(--font-playfair), serif;
+}
+
+.font-dancing {
+  font-family: var(--font-dancing), cursive;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* ── UI ELEMENTS ── */
+.section-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--crimson-dark);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.metaItem strong {
+  color: var(--gold-light);
+}
+
+/* ── FLOATING ELEMENTS ── */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  width: 0%;
+  z-index: 9999;
+  transition: width .1s linear;
+}
+
+#back-top {
+  position: fixed;
+  bottom: 2rem; left: 2rem;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--crimson-dark);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+#back-top.visible { opacity: 1; transform: translateY(0); }
+
+#whats-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  transition: all 0.3s cubic-bezier(.34,1.4,.64,1);
+  animation: wFloat 3s ease-in-out infinite;
+}
+
+#whats-float:hover {
+  background: #1ebe5d;
+  transform: translateY(-3px) scale(1.05);
+}
+
+@keyframes wFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 1.5rem 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--crimson-dark);
+  padding: 0.9rem 2.5rem;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(201, 162, 39, 0.2);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── HELPER CLASSES ── */
+.bg-crimson-dark { background-color: var(--crimson-dark); }
+.bg-crimson { background-color: var(--crimson); }
+.text-gold { color: var(--gold); }
+.text-white { color: var(--white); }

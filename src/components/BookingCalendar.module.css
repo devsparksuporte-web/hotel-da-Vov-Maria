@@ -1,0 +1,73 @@
+.calendar {
+    width: 100%;
+    background: var(--white);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    font-family: var(--font-lato);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--crimson);
+}
+
+.daysRow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+}
+
+.dayName {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.cell:hover:not(.disabled) {
+    background: var(--background);
+}
+
+.disabled {
+    color: #ccc;
+    cursor: default;
+}
+
+.selected {
+    background: var(--gold) !important;
+    color: var(--crimson-dark);
+}
+
+.inRange {
+    background: rgba(201, 162, 39, 0.1);
+    border-radius: 0;
+}

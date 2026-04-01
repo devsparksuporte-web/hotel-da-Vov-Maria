@@ -1,0 +1,35 @@
+{
+  "Navbar": {
+    "about": "Sobre",
+    "rooms": "Habitaciones",
+    "reviews": "Testimonios",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "title": "Bienvenido a tu hogar lejos de casa",
+    "subtitle": "Tradición, confort y el cariño que solo Vovó Maria ofrece.",
+    "cta": "Reservar Ahora"
+  },
+  "About": {
+    "subtitle": "Nuestra Historia",
+    "title": "Hospitalidad con Alma",
+    "p1": "El Hostel de la Vovó Maria nació del deseo de compartir la hospitalidad brasileña en su forma más pura.",
+    "p2": "Aquí, cada huésped es tratado como parte da la familia."
+  },
+  "Rooms": {
+    "subtitle": "Donde vas a descansar",
+    "title": "Nuestras Habitaciones",
+    "price": "R$ {price}/noche",
+    "book": "Reservar",
+    "loading": "Cargando opciones..."
+  },
+  "Booking": {
+    "step1": "1. Fechas",
+    "step2": "2. Datos",
+    "total": "Total: R$ {total}",
+    "continue": "Continuar",
+    "back": "Volver",
+    "success": "Reserva Solicitada! 🎉",
+    "successMsg": "Recibimos tu pedido. Pronto nos pondremos en contacto vía WhatsApp."
+  }
+}

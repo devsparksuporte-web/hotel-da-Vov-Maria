@@ -1,34 +1,99 @@
 .about {
-    padding: 100px 0;
+  background: var(--warm-white);
+  padding: 5rem 0;
 }
 
 .aboutGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.aboutText h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: var(--font-playfair);
+.aboutVisual {
+  position: relative;
+}
+
+.aboutCard {
+  background: var(--crimson);
+  border-radius: 4px;
+  padding: 3rem 2.5rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(74, 10, 30, 0.15);
+}
+
+.aboutCard::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(201, 162, 39, 0.12);
+}
+
+.cardIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.aboutCard h3 {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.aboutCard p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.statItem {
+  background: rgba(201, 162, 39, 0.12);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 4px;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.statNum {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  display: block;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.2rem;
 }
 
 .aboutText p {
-    margin-bottom: 20px;
-    color: var(--text-light);
-    font-family: var(--font-montserrat);
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #4a3020;
+  margin-bottom: 1.5rem;
 }
 
-.aboutImage img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-
-@media (max-width: 968px) {
-    .aboutGrid {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 768px) {
+  .aboutGrid { grid-template-columns: 1fr; gap: 3rem; }
 }

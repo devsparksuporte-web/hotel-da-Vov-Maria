@@ -1,0 +1,35 @@
+{
+  "Navbar": {
+    "about": "About",
+    "rooms": "Rooms",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "title": "Welcome to your home away from home",
+    "subtitle": "Tradition, comfort, and the care that only Vovó Maria offers.",
+    "cta": "Book Now"
+  },
+  "About": {
+    "subtitle": "Our Story",
+    "title": "Hospitality with Soul",
+    "p1": "Hostel da Vovó Maria was born from the desire to share Brazilian hospitality in its purest form.",
+    "p2": "Here, every guest is treated like part of the family."
+  },
+  "Rooms": {
+    "subtitle": "Where you will rest",
+    "title": "Our Accommodations",
+    "price": "R$ {price}/night",
+    "book": "Book Now",
+    "loading": "Loading options..."
+  },
+  "Booking": {
+    "step1": "1. Dates",
+    "step2": "2. Details",
+    "total": "Total: R$ {total}",
+    "continue": "Continue",
+    "back": "Back",
+    "success": "Booking Requested! 🎉",
+    "successMsg": "We received your request. We will contact you via WhatsApp soon."
+  }
+}

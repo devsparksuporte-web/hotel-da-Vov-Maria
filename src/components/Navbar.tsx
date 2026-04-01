@@ -1,24 +1,41 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
+import { usePathname, useRouter } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+  const t = useTranslations('Navbar');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = e.target.value;
+    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    router.push(newPath || `/${newLocale}`);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
-        <div className={styles.logo}>
-          Hostel da <span>Vovó Maria</span>
-        </div>
+        <Link href="/" className={styles.logo}>
+          Vovó Maria
+        </Link>
         <ul className={styles.navLinks}>
-          <li><Link href="#home">Home</Link></li>
-          <li><Link href="#sobre">Sobre</Link></li>
-          <li><Link href="#acomodacoes">Acomodações</Link></li>
-          <li><Link href="#contato">Contato</Link></li>
+          <li><Link href="#sobre">{t('about')}</Link></li>
+          <li><Link href="#acomodacoes">{t('rooms')}</Link></li>
+          <li><Link href="#depoimentos">{t('reviews')}</Link></li>
+          <li><Link href="#reserva" className={styles.navCta}>Reservar</Link></li>
+          <li>
+            <select className={styles.langSelect} value={locale} onChange={handleLanguageChange}>
+              <option value="pt">PT</option>
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+            </select>
+          </li>
         </ul>
-        <div className={styles.menuToggle}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       </nav>
     </header>
   );

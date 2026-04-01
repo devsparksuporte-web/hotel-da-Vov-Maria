@@ -1,18 +1,75 @@
 .footer {
-    padding: 60px 0;
-    background: var(--secondary);
-    color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    font-family: var(--font-montserrat);
+  background: var(--crimson-dark);
+  color: white;
+  padding: 5rem 0 2rem;
 }
 
-.socialLinks {
-    margin-top: 20px;
+.footerInner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
 }
 
-.socialLinks a {
-    color: var(--white);
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 0.9rem;
+.footerBrand .logo {
+  font-family: var(--font-dancing), cursive;
+  font-size: 2.2rem;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footerBrand p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  opacity: 0.7;
+  max-width: 320px;
+}
+
+.footerCol h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 1.5rem;
+}
+
+.footerCol ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerCol ul li {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.whatsappLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.whatsappLink:hover {
+  color: var(--gold-light);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .footerInner { grid-template-columns: 1fr; gap: 3rem; }
 }

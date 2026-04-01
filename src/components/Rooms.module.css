@@ -1,61 +1,150 @@
-.rooms {
-    padding: 100px 0;
-    background-color: #f0ede9;
-    font-family: var(--font-montserrat);
+.roomsSection {
+  background: var(--crimson-dark);
+  padding: 5rem 0;
+  color: white;
 }
 
-.sectionHeader {
-    text-align: center;
-    margin-bottom: 60px;
+.roomsHeader {
+  max-width: 1200px;
+  margin: 0 auto 3.5rem;
+  padding: 0 2rem;
 }
 
-.sectionHeader h2 {
-    font-size: 2.5rem;
-    font-family: var(--font-playfair);
+.roomsHeader p {
+  opacity: 0.7;
+  max-width: 480px;
 }
 
 .roomsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .roomCard {
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .roomCard:hover {
-    transform: translateY(-10px);
+  transform: translateY(-8px);
+  border-color: rgba(201, 162, 39, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-.roomImg img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+.roomImg {
+  height: 220px;
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  position: relative;
+  overflow: hidden;
+  transition: font-size 0.3s ease;
 }
 
-.roomInfo {
-    padding: 30px;
+.roomCard:hover .roomImg {
+  font-size: 6rem;
 }
 
-.roomInfo h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-family: var(--font-playfair);
+.roomBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--gold);
+  color: var(--crimson-dark);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 2px;
+  z-index: 10;
 }
 
-.roomInfo p {
-    color: var(--text-light);
-    margin-bottom: 20px;
-    font-size: 0.9rem;
+.roomBody {
+  padding: 2rem;
 }
 
-@media (max-width: 968px) {
-    .rooms {
-        padding: 60px 0;
-    }
+.roomBody h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.roomBody p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.roomAmenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.amenity {
+  font-size: 0.7rem;
+  background: rgba(201, 162, 39, 0.08);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  color: var(--gold-pale);
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+}
+
+.roomFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.priceWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceVal {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--gold-light);
+}
+
+.pricePer {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btnReservar {
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.btnReservar:hover {
+  background: var(--gold);
+  color: var(--crimson-dark);
 }

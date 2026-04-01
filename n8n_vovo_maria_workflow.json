@@ -1,0 +1,46 @@
+{
+  "name": "Hostel Vovó Maria Booking Notification",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vovo-maria-booking",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "phoneNumber": "={{ $json.body.record.guest_phone }}",
+        "message": "=Olá {{ $json.body.record.guest_name }}! Recebemos seu pedido de reserva para o {{ $json.body.record.room_name }}. Estamos analisando e entraremos em contato em breve! 🏠✨"
+      },
+      "name": "WhatsApp Guest",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [450, 200]
+    },
+    {
+      "parameters": {
+        "phoneNumber": "SEU_TELEFONE_ADMIN",
+        "message": "=Nova Reserva! 🚨\nHóspede: {{ $json.body.record.guest_name }}\nQuarto: {{ $json.body.record.room_name }}\nDatas: {{ $json.body.record.check_in }} até {{ $json.body.record.check_out }}\nTotal: R$ {{ $json.body.record.total_price }}"
+      },
+      "name": "WhatsApp Admin",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [450, 400]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          { "node": "WhatsApp Guest", "type": "main", "index": 0 },
+          { "node": "WhatsApp Admin", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  }
+}

@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -14,18 +13,13 @@ const playfair = Playfair_Display({
   weight: ["700"],
 });
 
-export const metadata: Metadata = {
-  title: "Hostel da Vovó Maria | Acolhimento e Tradição",
-  description: "Sinta-se em casa no Hostel da Vovó Maria. Oferecemos o melhor acolhimento, conforto e um café da manhã inesquecível. Reserve sua estadia!",
-};
-
-export default function RootLayout({
+export default function AdminLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt">
       <body className={`${montserrat.variable} ${playfair.variable} font-sans`}>
         {children}
       </body>

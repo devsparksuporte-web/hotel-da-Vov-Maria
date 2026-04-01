@@ -1,0 +1,35 @@
+{
+  "Navbar": {
+    "about": "Sobre",
+    "rooms": "Acomodações",
+    "reviews": "Depoimentos",
+    "contact": "Contato"
+  },
+  "Hero": {
+    "title": "Bem-vindo ao seu lar longe de casa",
+    "subtitle": "Tradição, conforto e o carinho que só a Vovó Maria oferece.",
+    "cta": "Reserve Agora"
+  },
+  "About": {
+    "subtitle": "Nossa História",
+    "title": "Acolhimento com Alma",
+    "p1": "O Hostel da Vovó Maria nasceu do desejo de compartilhar a hospitalidade brasileira em sua forma mais pura.",
+    "p2": "Aqui, cada hóspede é tratado como parte da família."
+  },
+  "Rooms": {
+    "subtitle": "Onde você vai descansar",
+    "title": "Nossas Acomodações",
+    "price": "R$ {price}/noite",
+    "book": "Reservar",
+    "loading": "Carregando opções..."
+  },
+  "Booking": {
+    "step1": "1. Datas",
+    "step2": "2. Dados",
+    "total": "Total: R$ {total}",
+    "continue": "Continuar",
+    "back": "Voltar",
+    "success": "Reserva Solicitada! 🎉",
+    "successMsg": "Recebemos seu pedido. Em breve entraremos em contato via WhatsApp."
+  }
+}
