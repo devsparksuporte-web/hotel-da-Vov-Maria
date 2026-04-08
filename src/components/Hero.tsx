@@ -1,24 +1,69 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Coffee, Key, HeartHandshake, Utensils, ChevronDown } from 'lucide-react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import FloatingScene from './FloatingScene';
 import styles from './Hero.module.css';
+
+gsap.registerPlugin(useGSAP);
 
 export default function Hero() {
   const t = useTranslations('Hero');
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    
+    tl.from(`.${styles.hero}`, {
+      opacity: 0,
+      duration: 1.5,
+      ease: 'power4.out'
+    })
+    .from(`.${styles.heroTopTag}`, {
+      y: -20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'back.out(1.7)'
+    }, '-=1')
+    .from(`.${styles.heroTitle}`, {
+      scale: 0.8,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power4.out'
+    }, '-=0.6')
+    .from(`.${styles.medallion}`, {
+      rotationX: 45,
+      scale: 0.5,
+      opacity: 0,
+      duration: 1.5,
+      ease: 'elastic.out(1, 0.75)'
+    }, '-=0.8')
+    .from(`.${styles.iconBadge}`, {
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: 'power3.out'
+    }, '-=1');
+  }, { scope: containerRef });
 
   return (
-    <section id="home" className={styles.hero}>
-      <span className={`${styles.heroTopTag} animate-fade-up`}>
+    <section id="home" className={styles.hero} ref={containerRef}>
+      <FloatingScene />
+      
+      <span className={styles.heroTopTag}>
         ✦ Pousada da Vovó Maria ✦
       </span>
 
-      <h1 className={`${styles.heroTitle} animate-fade-up`} style={{ animationDelay: '0.2s' }}>
+      <h1 className={styles.heroTitle}>
         POUSADA
       </h1>
 
-      <div className={`${styles.medallion} animate-fade-up`} style={{ animationDelay: '0.4s' }}>
+      <div className={styles.medallion}>
         <div className={styles.medallionRing}></div>
         <div className={styles.medallionRingInner}></div>
         <svg className={styles.medallionSvg} viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +95,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className={`${styles.heroIcons} animate-fade-up`} style={{ animationDelay: '0.6s' }}>
+      <div className={styles.heroIcons}>
         <div className={styles.iconBadge}>
           <Coffee color="var(--gold)" />
           <span>Café Fresquinho</span>

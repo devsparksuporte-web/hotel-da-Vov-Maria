@@ -18,24 +18,28 @@
 .roomsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  perspective: 2000px;
 }
 
 .roomCard {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(201, 162, 39, 0.2);
-  border-radius: 4px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .roomCard:hover {
-  transform: translateY(-8px);
-  border-color: rgba(201, 162, 39, 0.6);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-12px) rotateX(4deg) rotateY(-4deg);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-spatial);
 }
 
 .roomImg {

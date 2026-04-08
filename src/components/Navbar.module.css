@@ -1,11 +1,20 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  background: var(--crimson-dark);
-  border-bottom: 1px solid rgba(201, 162, 39, 0.2);
-  padding: 0.75rem 0;
+  z-index: 500;
+  background: rgba(74, 10, 30, 0.4);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem 0;
   width: 100%;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.headerScrolled {
+  padding: 0.6rem 0;
+  background: rgba(50, 6, 20, 0.8);
+  box-shadow: var(--shadow-spatial);
 }
 
 .navbar {

@@ -1,10 +1,28 @@
-'use client';
-
+import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import styles from './Diferenciais.module.css';
+
+gsap.registerPlugin(useGSAP);
 
 const Diferenciais = () => {
   const t = useTranslations('Diferenciais');
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(`.${styles.diferencialItem}`, {
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+  }, { scope: containerRef });
 
   const diferenciais = [
     { icon: '☕', title: 'Café da Manhã Caseiro', desc: 'Pão fresco, bolo, frutas da estação e muito carinho preparados toda manhã.' },
@@ -16,7 +34,7 @@ const Diferenciais = () => {
   ];
 
   return (
-    <section id="diferenciais" className={styles.diferenciaisSection}>
+    <section id="diferenciais" className={styles.diferenciaisSection} ref={containerRef}>
       <div className={styles.diferenciaisInner}>
         <p className="section-label">Por que nos escolher</p>
         <h2 className="section-title">O que nos torna <em>especiais</em></h2>

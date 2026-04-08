@@ -1,10 +1,29 @@
-'use client';
-
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Reviews.module.css';
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export default function Reviews() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(`.${styles.reviewCard}`, {
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+      },
+      x: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
+  }, { scope: containerRef });
   return (
-    <section id="depoimentos" className={styles.reviewsSection}>
+    <section id="depoimentos" className={styles.reviewsSection} ref={containerRef}>
       <div className={styles.reviewsInner}>
         <p className="section-label">O que dizem nossos hóspedes</p>
         <h2 className="section-title">Quem ficou, <em>voltou</em></h2>
