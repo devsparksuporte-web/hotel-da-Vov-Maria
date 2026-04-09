@@ -18,11 +18,17 @@ export default function BookingCalendar({ onSelectRange }: Props) {
   const renderHeader = () => {
     return (
       <div className={styles.header}>
-        <button onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}>
+        <button 
+          onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}
+          aria-label="Mês anterior"
+        >
           <ChevronLeft size={20} />
         </button>
-        <span>{format(currentMonth, 'MMMM yyyy', { locale: ptBR })}</span>
-        <button onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}>
+        <span aria-live="polite">{format(currentMonth, 'MMMM yyyy', { locale: ptBR })}</span>
+        <button 
+          onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
+          aria-label="Próximo mês"
+        >
           <ChevronRight size={20} />
         </button>
       </div>
@@ -78,13 +84,16 @@ export default function BookingCalendar({ onSelectRange }: Props) {
         const isInRange = startDate && endDate && day > startDate && day < endDate;
 
         days.push(
-          <div
+          <button
             key={day.toString()}
             className={`${styles.cell} ${isDisabled ? styles.disabled : ""} ${isSelected ? styles.selected : ""} ${isInRange ? styles.inRange : ""}`}
             onClick={() => !isDisabled && onDateClick(cloneDay)}
+            disabled={isDisabled}
+            aria-selected={isSelected}
+            aria-label={`${format(day, 'd')} de ${format(day, 'MMMM', { locale: ptBR })}`}
           >
             <span>{formattedDate}</span>
-          </div>
+          </button>
         );
         day = addDays(day, 1);
       }

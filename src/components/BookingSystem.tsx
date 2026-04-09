@@ -8,9 +8,9 @@ import { Room } from '@/lib/types/database';
 import BookingCalendar from './BookingCalendar';
 import styles from './BookingSystem.module.css';
 
-const locales = { pt: ptBR, en: enUS, es: es };
+import { siteConfig } from '@/lib/config';
 
-const WHATSAPP_NUMBER = '5522997633952';
+const locales = { pt: ptBR, en: enUS, es: es };
 
 interface Props {
   room: Room;
@@ -66,7 +66,7 @@ export default function BookingSystem({ room, onClose }: Props) {
       `Aguardo confirmação de disponibilidade. Obrigado(a)! 😊`,
     ].filter(Boolean).join('\n');
 
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${siteConfig.phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     onClose();
   };
@@ -78,11 +78,19 @@ export default function BookingSystem({ room, onClose }: Props) {
         <p>R$ {room.price_per_night}<span>/noite</span></p>
       </div>
 
-      <div className={styles.steps}>
-        <div className={`${styles.step} ${step === 1 ? styles.active : ''}`}>
+      <div className={styles.steps} role="tablist" aria-label="Etapas da reserva">
+        <div 
+          className={`${styles.step} ${step === 1 ? styles.active : ''}`}
+          role="tab"
+          aria-selected={step === 1}
+        >
           1. Datas
         </div>
-        <div className={`${styles.step} ${step === 2 ? styles.active : ''}`}>
+        <div 
+          className={`${styles.step} ${step === 2 ? styles.active : ''}`}
+          role="tab"
+          aria-selected={step === 2}
+        >
           2. Seus Dados
         </div>
       </div>

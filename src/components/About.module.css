@@ -1,12 +1,12 @@
 .about {
   background: var(--warm-white);
-  padding: 5rem 0;
+  padding: clamp(3rem, 10vw, 8rem) 0;
 }
 
 .aboutGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: clamp(2rem, 5vw, 6rem);
   align-items: center;
 }
 
