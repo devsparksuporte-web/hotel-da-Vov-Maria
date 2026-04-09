@@ -43,8 +43,8 @@ function FloatingObject({ color, speed, distort, offset }: { color: string, spee
 
 function Rig() {
   useFrame((state) => {
-    state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, state.mouse.x * 1.5, 0.05);
-    state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, state.mouse.y * 1.5, 0.05);
+    state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, state.mouse.x * 1.2, 0.07);
+    state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, state.mouse.y * 1.2, 0.07);
     state.camera.lookAt(0, 0, 0);
   });
   return null;

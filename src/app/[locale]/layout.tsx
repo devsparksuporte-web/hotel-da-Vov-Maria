@@ -23,11 +23,47 @@ const dancing = Dancing_Script({
   weight: ["600", "700"],
 });
 
+import { siteConfig } from "@/lib/config";
+
 export const metadata: Metadata = {
-  title: "Pousada da Vovó Maria | Acolhimento e Tradição em Cabo Frio",
-  description: "Sinta-se em casa na Pousada da Vovó Maria. Oferecemos o melhor acolhimento, conforto e um café da manhã inesquecível em Monte Alegre, Cabo Frio. Reserve já!",
+  title: siteConfig.seo.title,
+  description: siteConfig.seo.description,
+  keywords: siteConfig.seo.keywords,
+  metadataBase: new URL('https://pousadavovomaria.com.br'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en',
+      'pt-BR': '/pt',
+      'es-ES': '/es',
+    },
+  },
+  openGraph: {
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    url: 'https://pousadavovomaria.com.br',
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    creator: siteConfig.seo.twitterHandle,
+    images: [siteConfig.seo.ogImage],
+  },
   icons: {
     icon: "/favicon.png",
+    apple: "/apple-icon.png",
   },
 };
 
