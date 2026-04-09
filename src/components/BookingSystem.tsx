@@ -131,8 +131,9 @@ export default function BookingSystem({ room, onClose }: Props) {
           </div>
 
           <div className={styles.form}>
-            <label className={styles.label}>Seu nome *</label>
+            <label className={styles.label} htmlFor="guest-name">Seu nome *</label>
             <input
+              id="guest-name"
               className={styles.input}
               type="text"
               placeholder="Nome completo"
@@ -141,8 +142,9 @@ export default function BookingSystem({ room, onClose }: Props) {
               required
             />
 
-            <label className={styles.label}>WhatsApp (opcional)</label>
+            <label className={styles.label} htmlFor="guest-phone">WhatsApp (opcional)</label>
             <input
+              id="guest-phone"
               className={styles.input}
               type="tel"
               placeholder="(22) 99999-9999"

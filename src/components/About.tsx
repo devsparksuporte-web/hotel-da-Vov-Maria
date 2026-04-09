@@ -1,11 +1,8 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import styles from './About.module.css';
 
 export default function About() {
-  const t = useTranslations('About');
-
   return (
     <section id="sobre" className={styles.about}>
       <div className={`${styles.aboutGrid} container`}>

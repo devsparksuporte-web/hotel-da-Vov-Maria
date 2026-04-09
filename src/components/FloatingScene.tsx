@@ -1,13 +1,21 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, PerspectiveCamera, Environment, MeshDistortMaterial } from '@react-three/drei';
+import { useRef, Suspense } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Float, PerspectiveCamera, Environment, MeshDistortMaterial, AdaptiveDpr, AdaptiveEvents } from '@react-three/drei';
 import * as THREE from 'three';
 
-function FloatingObject({ position, color, speed, distort }: { position: [number, number, number], color: string, speed: number, distort: number }) {
+function FloatingObject({ color, speed, distort, offset }: { color: string, speed: number, distort: number, offset: [number, number, number] }) {
   const mesh = useRef<THREE.Mesh>(null!);
+  const { viewport } = useThree();
   
+  // Responsive position based on viewport size + custom offset
+  const position: [number, number, number] = [
+    viewport.width * offset[0],
+    viewport.height * offset[1],
+    offset[2]
+  ];
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     mesh.current.rotation.x = t * speed * 0.2;
@@ -35,8 +43,8 @@ function FloatingObject({ position, color, speed, distort }: { position: [number
 
 function Rig() {
   useFrame((state) => {
-    state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, state.mouse.x * 2, 0.05);
-    state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, state.mouse.y * 2, 0.05);
+    state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, state.mouse.x * 1.5, 0.05);
+    state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, state.mouse.y * 1.5, 0.05);
     state.camera.lookAt(0, 0, 0);
   });
   return null;
@@ -44,21 +52,29 @@ function Rig() {
 
 export default function FloatingScene() {
   return (
-    <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
-      <Canvas dpr={[1, 2]}>
-        <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={50} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#C9A227" />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#6B0F2B" />
-        
-        <FloatingObject position={[-4, 2, -2]} color="#C9A227" speed={1.5} distort={0.4} />
-        <FloatingObject position={[4, -2, -1]} color="#8B1A3A" speed={1.2} distort={0.6} />
-        <FloatingObject position={[-2, -3, 0]} color="#F5E6A3" speed={2} distort={0.3} />
-        <FloatingObject position={[3, 3, -3]} color="#6B0F2B" speed={0.8} distort={0.5} />
-        
-        <Environment preset="sunset" />
-        <Rig />
+    <div 
+      style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}
+      aria-hidden="true"
+    >
+      <Canvas dpr={[1, 2]} flat>
+        <Suspense fallback={null}>
+          <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={50} />
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1.5} color="#C9A227" />
+          <pointLight position={[-10, -10, -10]} intensity={1} color="#6B0F2B" />
+          
+          <FloatingObject offset={[-0.35, 0.2, -2]} color="#C9A227" speed={1.5} distort={0.4} />
+          <FloatingObject offset={[0.35, -0.2, -1]} color="#8B1A3A" speed={1.2} distort={0.6} />
+          <FloatingObject offset={[-0.2, -0.3, 0]} color="#F5E6A3" speed={2} distort={0.3} />
+          <FloatingObject offset={[0.3, 0.3, -3]} color="#6B0F2B" speed={0.8} distort={0.5} />
+          
+          <Environment preset="sunset" />
+          <Rig />
+          <AdaptiveDpr pixelated={false} />
+          <AdaptiveEvents />
+        </Suspense>
       </Canvas>
     </div>
   );
 }
+

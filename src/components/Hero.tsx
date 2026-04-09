@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 import { Coffee, Key, HeartHandshake, Utensils, ChevronDown } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -12,7 +11,7 @@ import styles from './Hero.module.css';
 gsap.registerPlugin(useGSAP);
 
 export default function Hero() {
-  const t = useTranslations('Hero');
+  
   const containerRef = useRef(null);
 
   useGSAP(() => {

@@ -42,7 +42,7 @@ export default function Reviews() {
           </div>
           <div className={styles.reviewCard}>
             <div className={styles.reviewStars}>★★★★★</div>
-            <p className={styles.reviewText}>"O melhor custo-benefício que já encontrei. Quarto limpo, cheiroso, café farto e atendimento impecável. Recomendo de olhos fechados para toda a família."</p>
+            <p className={styles.reviewText}>&quot;O melhor custo-benefício que já encontrei. Quarto limpo, cheiroso, café farto e atendimento impecável. Recomendo de olhos fechados para toda a família.&quot;</p>
             <div className={styles.reviewAuthor}>
               <div className={styles.avatar}>R</div>
               <div className={styles.authorInfo}>
@@ -53,7 +53,7 @@ export default function Reviews() {
           </div>
           <div className={styles.reviewCard}>
             <div className={styles.reviewStars}>★★★★★</div>
-            <p className={styles.reviewText}>"Viajamos em família e foi perfeito! As crianças adoraram, os adultos descansaram de verdade. A Vovó Maria tem um jeito especial de fazer todos se sentirem bem-vindos."</p>
+            <p className={styles.reviewText}>&quot;Viajamos em família e foi perfeito! As crianças adoraram, os adultos descansaram de verdade. A Vovó Maria tem um jeito especial de fazer todos se sentirem bem-vindos.&quot;</p>
             <div className={styles.reviewAuthor}>
               <div className={styles.avatar}>M</div>
               <div className={styles.authorInfo}>

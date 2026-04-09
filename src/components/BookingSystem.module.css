@@ -135,6 +135,11 @@
   cursor: not-allowed;
 }
 
+.nextBtn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
 .nextBtn:not(:disabled):hover {
   background: var(--crimson-dark);
   transform: translateY(-2px);
@@ -205,8 +210,10 @@
   transition: border-color 0.2s;
 }
 
-.input:focus {
-  outline: none;
+.input:focus,
+.input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
   border-color: var(--gold);
 }
 

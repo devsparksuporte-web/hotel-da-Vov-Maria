@@ -7,7 +7,6 @@ import styles from './Diferenciais.module.css';
 gsap.registerPlugin(useGSAP);
 
 const Diferenciais = () => {
-  const t = useTranslations('Diferenciais');
   const containerRef = useRef(null);
 
   useGSAP(() => {
