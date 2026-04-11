@@ -1,42 +1,45 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import styles from './About.module.css';
 
 export default function About() {
+  const t = useTranslations('About');
+
   return (
     <section id="sobre" className={styles.about}>
       <div className={`${styles.aboutGrid} container`}>
         <div className={styles.aboutVisual}>
           <div className={styles.aboutCard}>
             <div className={styles.cardIcon}>🏡</div>
-            <h3>Uma pousada com alma</h3>
-            <p>Cada detalhe foi pensado com o carinho de quem recebe amigos em casa. Do café da manhã feito com amor ao aconchego dos quartos cuidadosamente decorados.</p>
+            <h3>{t('title')}</h3>
+            <p>{t('p1')}</p>
             <div className={styles.statsGrid}>
               <div className={styles.statItem}>
                 <span className={styles.statNum}>12</span>
-                <span className={styles.statLabel}>Quartos</span>
+                <span className={styles.statLabel}>{t('stats.rooms')}</span>
               </div>
               <div className={styles.statItem}>
                 <span className={styles.statNum}>5★</span>
-                <span className={styles.statLabel}>Avaliação</span>
+                <span className={styles.statLabel}>{t('stats.rating')}</span>
               </div>
               <div className={styles.statItem}>
                 <span className={styles.statNum}>+500</span>
-                <span className={styles.statLabel}>Hóspedes</span>
+                <span className={styles.statLabel}>{t('stats.guests')}</span>
               </div>
               <div className={styles.statItem}>
                 <span className={styles.statNum}>15</span>
-                <span className={styles.statLabel}>Anos</span>
+                <span className={styles.statLabel}>{t('stats.years')}</span>
               </div>
             </div>
           </div>
         </div>
         <div className={styles.aboutText}>
-          <p className="section-label">Nossa história</p>
-          <h2 className="section-title">O calor de <em>casa</em>, onde você estiver</h2>
+          <p className="section-label">{t('subtitle')}</p>
+          <h2 className="section-title">{t('title')}</h2>
           <div className="divider"></div>
-          <p>A Pousada da Vovó Maria nasceu do sonho de oferecer muito mais do que uma simples hospedagem. Aqui, cada hóspede é tratado como parte da família — com carinho, respeito e toda a dedicação que você merece.</p>
-          <p>Localizada em um ambiente tranquilo e acolhedor, nossa pousada combina o charme rústico com todo o conforto moderno.</p>
+          <p>{t('p1')}</p>
+          <p>{t('p2')}</p>
         </div>
       </div>
     </section>

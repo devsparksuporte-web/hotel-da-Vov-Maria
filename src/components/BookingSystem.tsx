@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { differenceInDays, format } from 'date-fns';
 import { ptBR, enUS, es } from 'date-fns/locale';
 import { Room } from '@/lib/types/database';
@@ -19,6 +19,7 @@ interface Props {
 
 export default function BookingSystem({ room, onClose }: Props) {
   const locale = useLocale();
+  const t = useTranslations('Booking');
   const dateLocale = locales[locale as keyof typeof locales] || ptBR;
 
   const [startDate, setStartDate] = useState<Date | null>(null);
@@ -46,8 +47,8 @@ export default function BookingSystem({ room, onClose }: Props) {
   const handleSendWhatsApp = () => {
     if (!startDate || !endDate || !name.trim()) return;
 
-    const checkIn = format(startDate, "dd/MM/yyyy", { locale: ptBR });
-    const checkOut = format(endDate, "dd/MM/yyyy", { locale: ptBR });
+    const checkIn = format(startDate, "dd/MM/yyyy", { locale: dateLocale });
+    const checkOut = format(endDate, "dd/MM/yyyy", { locale: dateLocale });
     const nights = getNights();
     const total = calculateTotal();
 
@@ -66,7 +67,7 @@ export default function BookingSystem({ room, onClose }: Props) {
       `Aguardo confirmação de disponibilidade. Obrigado(a)! 😊`,
     ].filter(Boolean).join('\n');
 
-    const url = `https://wa.me/${siteConfig.phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     onClose();
   };
@@ -84,14 +85,14 @@ export default function BookingSystem({ room, onClose }: Props) {
           role="tab"
           aria-selected={step === 1}
         >
-          1. Datas
+          {t('step1')}
         </div>
         <div 
           className={`${styles.step} ${step === 2 ? styles.active : ''}`}
           role="tab"
           aria-selected={step === 2}
         >
-          2. Seus Dados
+          {t('step2')}
         </div>
       </div>
 
@@ -104,7 +105,7 @@ export default function BookingSystem({ room, onClose }: Props) {
               <>
                 <p className={styles.dateRange}>
                   {format(startDate, 'dd MMM', { locale: dateLocale })} → {format(endDate, 'dd MMM', { locale: dateLocale })}
-                  <span className={styles.nightsBadge}>{getNights()} noite{getNights() !== 1 ? 's' : ''}</span>
+                  <span className={styles.nightsBadge}>{t('form.nights', { count: getNights() })}</span>
                 </p>
                 <p className={styles.total}>R$ {calculateTotal().toLocaleString('pt-BR')}</p>
               </>
@@ -119,38 +120,38 @@ export default function BookingSystem({ room, onClose }: Props) {
               onClick={() => setStep(2)}
               disabled={!startDate || !endDate}
             >
-              Continuar →
+              {t('continue')} →
             </button>
           </div>
         </div>
       ) : (
         <div className={styles.formStep}>
           <button className={styles.backBtn} onClick={() => setStep(1)}>
-            ← Voltar
+            ← {t('back')}
           </button>
 
           <div className={styles.bookingSummaryCard}>
             <p><strong>{room.name}</strong></p>
             <p>
               {format(startDate!, 'dd/MM/yyyy')} → {format(endDate!, 'dd/MM/yyyy')}
-              &nbsp;·&nbsp; {getNights()} noite{getNights() !== 1 ? 's' : ''}
+              &nbsp;·&nbsp; {t('form.nights', { count: getNights() })}
             </p>
-            <p className={styles.totalConfirm}>Total: R$ {calculateTotal().toLocaleString('pt-BR')}</p>
+            <p className={styles.totalConfirm}>{t('total', { total: calculateTotal().toLocaleString('pt-BR') })}</p>
           </div>
 
           <div className={styles.form}>
-            <label className={styles.label} htmlFor="guest-name">Seu nome *</label>
+            <label className={styles.label} htmlFor="guest-name">{t('form.name')} *</label>
             <input
               id="guest-name"
               className={styles.input}
               type="text"
-              placeholder="Nome completo"
+              placeholder={t('form.name')}
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
 
-            <label className={styles.label} htmlFor="guest-phone">WhatsApp (opcional)</label>
+            <label className={styles.label} htmlFor="guest-phone">{t('form.phone')}</label>
             <input
               id="guest-phone"
               className={styles.input}
@@ -168,7 +169,7 @@ export default function BookingSystem({ room, onClose }: Props) {
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="currentColor">
                 <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.466-2.001A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.844 21.504c-.332.933-1.948 1.782-2.672 1.896-.686.107-1.552.151-2.504-.157-.577-.186-1.318-.433-2.257-.85-3.975-1.716-6.571-5.716-6.771-5.983-.198-.265-1.618-2.152-1.618-4.104s1.025-2.913 1.389-3.311c.363-.397.793-.497 1.058-.497.265 0 .529.002.762.014.244.013.571-.093.893.681.332.8 1.127 2.753 1.226 2.952.099.199.165.431.033.694-.133.265-.199.43-.397.663-.199.232-.418.52-.596.698-.199.199-.407.413-.175.812.232.397 1.032 1.7 2.215 2.754 1.522 1.355 2.804 1.774 3.201 1.973.397.199.628.166.86-.1.232-.265.995-1.16 1.26-1.558.265-.397.53-.332.893-.199.364.133 2.315 1.092 2.712 1.291.397.199.662.298.762.464.099.166.099.963-.233 1.897z"/>
               </svg>
-              Enviar pelo WhatsApp
+              {t('book')}
             </button>
           </div>
         </div>

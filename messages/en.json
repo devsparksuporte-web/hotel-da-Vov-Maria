@@ -3,25 +3,58 @@
     "about": "About",
     "rooms": "Rooms",
     "reviews": "Reviews",
-    "contact": "Contact"
+    "contact": "Contact",
+    "book": "Book Now"
   },
   "Hero": {
-    "title": "Welcome to your home away from home",
+    "badge": "✦ Pousada da Vovó Maria ✦",
+    "title": "VOVÓ MARIA'S GUESTHOUSE",
     "subtitle": "Tradition, comfort, and the care that only Vovó Maria offers.",
-    "cta": "Book Now"
+    "cta": "Discover",
+    "features": {
+      "coffee": "Fresh Coffee",
+      "key": "Your Key",
+      "kitchen": "Heartfelt Cooking",
+      "welcome": "Pure Hospitality"
+    }
   },
   "About": {
     "subtitle": "Our Story",
     "title": "Hospitality with Soul",
-    "p1": "Hostel da Vovó Maria was born from the desire to share Brazilian hospitality in its purest form.",
-    "p2": "Here, every guest is treated like part of the family."
+    "p1": "Pousada da Vovó Maria was born from the dream of offering much more than just lodging. Here, every guest is treated like part of the family — with care, respect, and all the dedication you deserve.",
+    "p2": "Located in a quiet and welcoming environment, our guesthouse combines rustic charm with all modern comforts.",
+    "stats": {
+      "rooms": "12 Rooms",
+      "rating": "5★ Rating",
+      "guests": "+500 Guests",
+      "years": "15 Years"
+    }
   },
   "Rooms": {
     "subtitle": "Where you will rest",
     "title": "Our Accommodations",
-    "price": "R$ {price}/night",
+    "price_per_night": "R$ {price}/night",
     "book": "Book Now",
-    "loading": "Loading options..."
+    "loading": "Loading options...",
+    "popular": "Popular",
+    "featured": "Featured"
+  },
+  "Features": {
+    "title": "What makes us special",
+    "items": {
+      "breakfast": "Homemade Breakfast",
+      "breakfast_desc": "Fresh bread, cake, seasonal fruits, and lots of love prepared every morning.",
+      "comfort": "Cozy Comfort",
+      "comfort_desc": "Soft linens, always fragrant rooms, and details that make a difference.",
+      "service": "Personalized Service",
+      "service_desc": "Flexible check-in and individual attention for every guest, just like at home.",
+      "tranquility": "Quiet Environment",
+      "tranquility_desc": "Calm location, well-kept garden, and spaces to relax with peace and quiet.",
+      "gift": "Welcome Treat",
+      "gift_desc": "Every guest receives a special treat from Vovó Maria upon arrival.",
+      "location": "Strategic Location",
+      "location_desc": "Easy access to the beaches and tourist spots of Cabo Frio."
+    }
   },
   "Booking": {
     "step1": "1. Dates",
@@ -30,6 +63,20 @@
     "continue": "Continue",
     "back": "Back",
     "success": "Booking Requested! 🎉",
-    "successMsg": "We received your request. We will contact you via WhatsApp soon."
+    "successMsg": "We received your request. We will contact you via WhatsApp soon.",
+    "form": {
+      "name": "Full Name",
+      "phone": "WhatsApp (optional)",
+      "checkin": "Check-in",
+      "checkout": "Check-out",
+      "guests": "Guests",
+      "nights": "{count} nights"
+    }
+  },
+  "Footer": {
+    "structure": "Our Structure",
+    "description": "Feel at home! Our space was created to offer unforgettable moments, with a barbecue area, refreshing pool, and several spots for you to relax.",
+    "checkin": "Check-in: 6:30 AM",
+    "checkout": "Check-out: 11:00 PM"
   }
 }

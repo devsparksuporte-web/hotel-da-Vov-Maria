@@ -1,38 +1,42 @@
+import { useTranslations } from 'next-intl';
+import { siteConfig } from '@/lib/config';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const t = useTranslations('Footer');
+  const nt = useTranslations('Navbar');
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
         <div className={styles.footerBrand}>
-          <span className={styles.logo}>Vovó Maria</span>
-          <p>Uma pousada onde cada detalhe é pensado com carinho para transformar sua viagem em uma memória afetiva inesquecível.</p>
+          <span className={styles.logo}>{siteConfig.name}</span>
+          <p>{t('description')}</p>
         </div>
         <div className={styles.footerCol}>
-          <h4>Navegação</h4>
+          <h4>{nt('about')}</h4>
           <ul>
-            <li>Sobre Nós</li>
-            <li>Quartos & Suítes</li>
-            <li>Café da Manhã</li>
-            <li>Galeria de Fotos</li>
-            <li>Reservas</li>
+            <li><a href="#sobre">{nt('about')}</a></li>
+            <li><a href="#acomodacoes">{nt('rooms')}</a></li>
+            <li><a href="#depoimentos">{nt('reviews')}</a></li>
+            <li><a href="#reserva">{nt('book')}</a></li>
           </ul>
         </div>
         <div className={styles.footerCol}>
-          <h4>Contato</h4>
+          <h4>{nt('contact')}</h4>
           <ul>
-            <li>📍 R. Dr. Cardoso da Fonseca, nº 95<br/>Monte Alegre, Cabo Frio - RJ</li>
+            <li>📍 {siteConfig.contact.address}</li>
             <li>
-              <a href="https://wa.me/5522997633952" target="_blank" className={styles.whatsappLink}>
-                📞 (22) 99763-3952
+              <a href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" className={styles.whatsappLink}>
+                📞 {siteConfig.contact.phone}
               </a>
             </li>
-            <li>🕗 Check-in: 6h30 • Check-out: 23h00</li>
+            <li>🕗 {t('checkin')} • {t('checkout')}</li>
           </ul>
         </div>
       </div>
       <div className={styles.footerBottom}>
-        © 2025 Pousada da Vovó Maria — Feito com ❤️ e muito carinho
+        © {new Date().getFullYear()} {siteConfig.name} — Feito com ❤️ e muito carinho
       </div>
     </footer>
   );

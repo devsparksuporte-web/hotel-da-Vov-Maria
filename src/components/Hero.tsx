@@ -5,13 +5,14 @@ import Image from 'next/image';
 import { Coffee, Key, HeartHandshake, Utensils, ChevronDown } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { useTranslations } from 'next-intl';
 import FloatingScene from './FloatingScene';
 import styles from './Hero.module.css';
 
 gsap.registerPlugin(useGSAP);
 
 export default function Hero() {
-  
+  const t = useTranslations('Hero');
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -55,11 +56,11 @@ export default function Hero() {
       <FloatingScene />
       
       <span className={styles.heroTopTag}>
-        ✦ Pousada da Vovó Maria ✦
+        {t('badge')}
       </span>
 
       <h1 className={styles.heroTitle}>
-        POUSADA
+        {t('title')}
       </h1>
 
       <div className={styles.medallion}>
@@ -97,24 +98,24 @@ export default function Hero() {
       <div className={styles.heroIcons}>
         <div className={styles.iconBadge}>
           <Coffee color="var(--gold)" />
-          <span>Café Fresquinho</span>
+          <span>{t('features.coffee')}</span>
         </div>
         <div className={styles.iconBadge}>
           <Key color="var(--gold)" />
-          <span>Sua Chave</span>
+          <span>{t('features.key')}</span>
         </div>
         <div className={styles.iconBadge}>
           <Utensils color="var(--gold)" />
-          <span>Cozinha Afetiva</span>
+          <span>{t('features.kitchen')}</span>
         </div>
         <div className={styles.iconBadge}>
           <HeartHandshake color="var(--gold)" />
-          <span>Puro Acolhimento</span>
+          <span>{t('features.welcome')}</span>
         </div>
       </div>
 
       <a href="#sobre" className={styles.scrollCue}>
-        <span>Descobrir</span>
+        <span>{t('cta')}</span>
         <ChevronDown size={20} />
       </a>
     </section>

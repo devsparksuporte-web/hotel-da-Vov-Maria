@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Room } from '@/lib/types/database';
 import BookingSystem from './BookingSystem';
 import styles from './Rooms.module.css';
@@ -27,6 +28,7 @@ const ROOMS: Room[] = [
 ];
 
 export default function Rooms() {
+  const t = useTranslations('Rooms');
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
 
   const getEmoji = (image_url: string) => {
@@ -39,8 +41,8 @@ export default function Rooms() {
   return (
     <section id="acomodacoes" className={styles.roomsSection}>
       <div className={styles.roomsHeader}>
-        <p className="section-label" style={{ color: 'var(--gold)' }}>Acomodações</p>
-        <h2 className="section-title" style={{ color: 'white' }}>Nossos <em>Quartos</em></h2>
+        <p className="section-label" style={{ color: 'var(--gold)' }}>{t('subtitle')}</p>
+        <h2 className="section-title" style={{ color: 'white' }}>{t('title')}</h2>
         <p>Cada quarto foi decorado com atenção aos detalhes para que você se sinta completamente em casa.</p>
       </div>
 
@@ -49,9 +51,8 @@ export default function Rooms() {
             <div key={room.id} className={styles.roomCard}>
               <div className={styles.roomImg}>
                 {getEmoji(room.image_url)}
-                {room.price_per_night < 200 && <span className={styles.roomBadge}>Popular</span>}
-                {room.price_per_night >= 300 && <span className={styles.roomBadge}>Exclusivo</span>}
-                {room.price_per_night >= 200 && room.price_per_night < 300 && <span className={styles.roomBadge}>Destaque</span>}
+                {room.price_per_night < 200 && <span className={styles.roomBadge}>{t('popular')}</span>}
+                {room.price_per_night >= 200 && <span className={styles.roomBadge}>{t('featured')}</span>}
               </div>
               <div className={styles.roomBody}>
                 <h3>{room.name}</h3>
@@ -65,13 +66,13 @@ export default function Rooms() {
                 <div className={styles.roomFooter}>
                   <div className={styles.priceWrapper}>
                     <span className={styles.priceVal}>R$ {room.price_per_night}</span>
-                    <span className={styles.pricePer}>por noite</span>
+                    <span className={styles.pricePer}>{t('price_per_night', { price: '' }).replace('R$ ', '')}</span>
                   </div>
                   <button 
                     className={styles.btnReservar}
                     onClick={() => setSelectedRoom(room)}
                   >
-                    Reservar
+                    {t('book')}
                   </button>
                 </div>
               </div>

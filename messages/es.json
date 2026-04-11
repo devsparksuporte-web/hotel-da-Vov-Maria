@@ -3,25 +3,58 @@
     "about": "Sobre",
     "rooms": "Habitaciones",
     "reviews": "Testimonios",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "book": "Reservar"
   },
   "Hero": {
-    "title": "Bienvenido a tu hogar lejos de casa",
+    "badge": "✦ Pousada da Vovó Maria ✦",
+    "title": "POSADA DE LA VOVÓ MARIA",
     "subtitle": "Tradición, confort y el cariño que solo Vovó Maria ofrece.",
-    "cta": "Reservar Ahora"
+    "cta": "Descubrir",
+    "features": {
+      "coffee": "Café Fresquito",
+      "key": "Tu Llave",
+      "kitchen": "Cocina Afectiva",
+      "welcome": "Pura Hospitalidad"
+    }
   },
   "About": {
     "subtitle": "Nuestra Historia",
     "title": "Hospitalidad con Alma",
-    "p1": "El Hostel de la Vovó Maria nació del deseo de compartir la hospitalidad brasileña en su forma más pura.",
-    "p2": "Aquí, cada huésped es tratado como parte da la familia."
+    "p1": "La Posada de la Vovó Maria nació del sueño de ofrecer mucho más que un simple hospedaje. Aquí, cada huésped es tratado como parte de la familia — con cariño, respeto y toda la dedicación que usted merece.",
+    "p2": "Ubicada en un ambiente tranquilo y acogedor, nuestra posada combina el encanto rústico con todo el confort moderno.",
+    "stats": {
+      "rooms": "12 Habitaciones",
+      "rating": "5★ Evaluación",
+      "guests": "+500 Huéspedes",
+      "years": "15 Años"
+    }
   },
   "Rooms": {
     "subtitle": "Donde vas a descansar",
     "title": "Nuestras Habitaciones",
-    "price": "R$ {price}/noche",
+    "price_per_night": "R$ {price}/noche",
     "book": "Reservar",
-    "loading": "Cargando opciones..."
+    "loading": "Cargando opciones...",
+    "popular": "Popular",
+    "featured": "Destacado"
+  },
+  "Features": {
+    "title": "Lo que nos hace especiales",
+    "items": {
+      "breakfast": "Desayuno Casero",
+      "breakfast_desc": "Pan fresco, pastel, frutas de temporada y mucho cariño preparados cada mañana.",
+      "comfort": "Confort Acogedor",
+      "comfort_desc": "Ropa de cama suave, habitaciones siempre perfumadas y detalles que marcan la diferencia.",
+      "service": "Atención Personalizada",
+      "service_desc": "Check-in flexible y atención individual para cada huésped, como en casa.",
+      "tranquility": "Ambiente Tranquilo",
+      "tranquility_desc": "Ubicación tranquila, jardín cuidado y espacios para relajarse con paz y sosiego.",
+      "gift": "Dulce de Bienvenida",
+      "gift_desc": "Cada huésped recibe un detalle especial de la Vovó Maria al llegar.",
+      "location": "Ubicación Estratégica",
+      "location_desc": "Fácil acceso a las playas y puntos turísticos de Cabo Frio."
+    }
   },
   "Booking": {
     "step1": "1. Fechas",
@@ -30,6 +63,20 @@
     "continue": "Continuar",
     "back": "Volver",
     "success": "Reserva Solicitada! 🎉",
-    "successMsg": "Recibimos tu pedido. Pronto nos pondremos en contacto vía WhatsApp."
+    "successMsg": "Recibimos tu pedido. Pronto nos pondremos en contacto vía WhatsApp.",
+    "form": {
+      "name": "Nombre Completo",
+      "phone": "WhatsApp (opcional)",
+      "checkin": "Check-in",
+      "checkout": "Check-out",
+      "guests": "Huéspedes",
+      "nights": "{count} noches"
+    }
+  },
+  "Footer": {
+    "structure": "Nuestra Estructura",
+    "description": "¡Siéntase como en casa! Nuestro espacio fue creado para ofrecer momentos inolvidables, con barbacoa, piscina refrescante y varios rincones para relajarse.",
+    "checkin": "Check-in: 6:30",
+    "checkout": "Check-out: 23:00"
   }
 }
