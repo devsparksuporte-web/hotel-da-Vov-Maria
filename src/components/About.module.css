@@ -1,12 +1,12 @@
 .about {
-  background: var(--warm-white);
-  padding: clamp(3rem, 10vw, 8rem) 0;
+  background: var(--bg-cream);
+  padding: clamp(5rem, 12vw, 10rem) 0;
 }
 
 .aboutGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 6rem);
+  gap: clamp(3rem, 8vw, 8rem);
   align-items: center;
 }
 
@@ -15,85 +15,92 @@
 }
 
 .aboutCard {
-  background: var(--crimson);
-  border-radius: 4px;
-  padding: 3rem 2.5rem;
-  color: white;
+  background: var(--primary);
+  border-radius: 8px;
+  padding: 4rem 3.5rem;
+  color: var(--white);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(74, 10, 30, 0.15);
+  box-shadow: var(--shadow-deep);
 }
 
 .aboutCard::before {
   content: '';
   position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 160px;
-  height: 160px;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background: rgba(201, 162, 39, 0.12);
+  background: var(--gold-gradient);
+  opacity: 0.1;
 }
 
 .cardIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
 }
 
 .aboutCard h3 {
   font-family: var(--font-playfair), serif;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: var(--gold-light);
-  margin-bottom: 0.5rem;
+  color: var(--secondary-light);
+  margin-bottom: 1rem;
 }
 
 .aboutCard p {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  opacity: 0.85;
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.9;
 }
 
 .statsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .statItem {
-  background: rgba(201, 162, 39, 0.12);
-  border: 1px solid rgba(201, 162, 39, 0.3);
+  background: rgba(197, 160, 89, 0.08);
+  border: 1px solid rgba(197, 160, 89, 0.2);
   border-radius: 4px;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  background: rgba(197, 160, 89, 0.15);
+  transform: translateY(-5px);
 }
 
 .statNum {
   font-family: var(--font-playfair), serif;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 900;
-  color: var(--gold-light);
+  color: var(--secondary);
   display: block;
 }
 
 .statLabel {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 0.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.4rem;
 }
 
 .aboutText p {
-  font-size: 1rem;
-  line-height: 1.9;
-  color: #4a3020;
-  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
-  .aboutGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .aboutGrid { grid-template-columns: 1fr; gap: 4rem; }
+  .aboutCard { padding: 3rem 2rem; }
 }

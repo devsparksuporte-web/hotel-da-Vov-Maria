@@ -1,24 +1,28 @@
 .footer {
-  background: var(--crimson-dark);
-  color: white;
-  padding: 5rem 0 2rem;
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 6rem 0 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 4rem;
-  max-width: 1200px;
-  margin: 0 auto 4rem;
-  padding: 0 2rem;
 }
 
 .footerBrand .logo {
-  font-family: var(--font-dancing), cursive;
-  font-size: 2.2rem;
-  color: var(--gold-light);
+  font-family: var(--font-playfair), serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--secondary);
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .footerBrand p {
@@ -29,47 +33,51 @@
 }
 
 .footerCol h4 {
+  font-family: var(--font-playfair), serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--gold-light);
-  margin-bottom: 1.5rem;
+  color: var(--white);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .footerCol ul {
   list-style: none;
-  padding: 0;
 }
 
-.footerCol ul li {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-bottom: 0.75rem;
-  line-height: 1.5;
+.footerCol li {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
-.whatsappLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.7);
+.footerCol li:hover {
+  opacity: 1;
+}
+
+.footerCol a {
+  color: inherit;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-.whatsappLink:hover {
-  color: var(--gold-light);
+.footerCol a:hover {
+  color: var(--secondary);
 }
 
 .footerBottom {
-  border-top: 1px solid rgba(201, 162, 39, 0.15);
-  padding-top: 2rem;
-  text-align: center;
-  font-size: 0.75rem;
-  opacity: 0.5;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 4rem auto 0;
+  padding: 2rem 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 768px) {
   .footerInner { grid-template-columns: 1fr; gap: 3rem; }
+  .footerCol h4 { margin-bottom: 1rem; }
 }

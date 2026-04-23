@@ -11,17 +11,17 @@ export const siteConfig = {
     facebook: "https://facebook.com/pousadavovomaria",
   },
   seo: {
-    title: "Pousada da Vovó Maria | Acolhimento e Tradição em Cabo Frio - RJ",
-    description: "Sinta-se em casa na Pousada da Vovó Maria. A melhor hospedagem em Cabo Frio com café da manhã caseiro, conforto e o carinho que você merece em Monte Alegre.",
+    title: "Pousada da Vovó Maria | Hospedagem de Luxo e Aconchego em Cabo Frio - RJ",
+    description: "Descubra o requinte e a tradição da Pousada da Vovó Maria em Cabo Frio. Suítes exclusivas, café da manhã artesanal e hospitalidade premium. Reserve sua estadia de luxo hoje!",
     keywords: [
-      "pousada cabo frio", 
-      "hospedagem cabo frio", 
+      "pousada de luxo cabo frio", 
+      "hospedagem premium cabo frio", 
       "melhor pousada cabo frio", 
-      "pousada em monte alegre cabo frio", 
+      "pousada monte alegre cabo frio", 
       "vovó maria cabo frio", 
-      "pousada aconchegante cabo frio",
-      "pousada com café da manhã cabo frio",
-      "pousada familiar cabo frio"
+      "pousada boutique cabo frio",
+      "pousada com café da manhã artesanal",
+      "reserva pousada cabo frio"
     ],
     ogImage: "/og-image.jpg",
     twitterHandle: "@pousadavovomaria",

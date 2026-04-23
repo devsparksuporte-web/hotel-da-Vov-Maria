@@ -1,31 +1,32 @@
 :root {
-  --crimson: #6B0F2B;
-  --crimson-dark: #320614;
-  --crimson-light: #8B1A3A;
-  --gold: #C9A227;
-  --gold-light: #E8C547;
-  --gold-pale: #F5E6A3;
-  --cream: #FDF6E3;
-  --warm-white: #FAF4E8;
-  --text-dark: #2A1510;
+  --primary: #0A1128;
+  --primary-dark: #050816;
+  --primary-light: #1C2B4B;
+  --secondary: #C5A059;
+  --secondary-light: #D4B475;
+  --secondary-dark: #A6803F;
+  --bg-cream: #F9F7F2;
+  --text-main: #1A1A1A;
+  --text-muted: #4A4A4A;
   --white: #FFFFFF;
   
-  /* Antigravity Tokens */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(12px);
-  --shadow-spatial: 0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
-  --shadow-weightless: 0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3);
-  --gradient-deep: radial-gradient(circle at center, var(--crimson-light) 0%, var(--crimson-dark) 100%);
+  /* Luxury Tokens */
+  --glass-bg: rgba(10, 17, 40, 0.05);
+  --glass-border: rgba(197, 160, 89, 0.2);
+  --glass-blur: blur(15px);
+  --shadow-luxury: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-deep: 0 30px 60px rgba(0, 0, 0, 0.12);
+  --gradient-luxury: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  --gold-gradient: linear-gradient(135deg, #C5A059 0%, #D4B475 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: var(--font-lato), sans-serif;
-  background: var(--cream);
-  color: var(--text-dark);
-  line-height: 1.6;
+  background: var(--bg-cream);
+  color: var(--text-main);
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
@@ -49,26 +50,27 @@ section {
 
 /* ── UI ELEMENTS ── */
 .section-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.35em;
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--secondary);
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2.2rem, 6vw, 4rem);
   font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  color: var(--crimson-dark);
+  line-height: 1.05;
+  margin-bottom: 2rem;
+  color: var(--primary-dark);
 }
 
 .section-title em {
   font-style: italic;
-  color: var(--gold);
+  font-family: var(--font-dancing), cursive;
+  color: var(--secondary);
 }
 
 .metaItem strong {
@@ -136,32 +138,32 @@ section {
 }
 
 .divider {
-  width: 60px;
-  height: 3px;
-  background: var(--gold);
-  margin: 1.5rem 0;
+  width: 80px;
+  height: 2px;
+  background: var(--secondary);
+  margin: 2rem 0;
 }
 
 .btn-primary {
   display: inline-block;
-  background: var(--gold);
-  color: var(--crimson-dark);
-  padding: 0.9rem 2.5rem;
-  font-size: 0.8rem;
-  font-weight: 900;
-  letter-spacing: 0.2em;
+  background: var(--gold-gradient);
+  color: var(--primary-dark);
+  padding: 1.2rem 3rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(201, 162, 39, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3);
 }
 
 /* ── ANIMATIONS ── */

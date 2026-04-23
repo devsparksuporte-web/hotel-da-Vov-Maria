@@ -60,13 +60,13 @@ export default function FloatingScene() {
         <Suspense fallback={null}>
           <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={50} />
           <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1.5} color="#C9A227" />
-          <pointLight position={[-10, -10, -10]} intensity={1} color="#6B0F2B" />
+          <pointLight position={[10, 10, 10]} intensity={1.5} color="#C5A059" />
+          <pointLight position={[-10, -10, -10]} intensity={1} color="#0A1128" />
           
-          <FloatingObject offset={[-0.35, 0.2, -2]} color="#C9A227" speed={1.5} distort={0.4} />
-          <FloatingObject offset={[0.35, -0.2, -1]} color="#8B1A3A" speed={1.2} distort={0.6} />
-          <FloatingObject offset={[-0.2, -0.3, 0]} color="#F5E6A3" speed={2} distort={0.3} />
-          <FloatingObject offset={[0.3, 0.3, -3]} color="#6B0F2B" speed={0.8} distort={0.5} />
+          <FloatingObject offset={[-0.35, 0.2, -2]} color="#C5A059" speed={1.5} distort={0.4} />
+          <FloatingObject offset={[0.35, -0.2, -1]} color="#0A1128" speed={1.2} distort={0.6} />
+          <FloatingObject offset={[-0.2, -0.3, 0]} color="#D4B475" speed={2} distort={0.3} />
+          <FloatingObject offset={[0.3, 0.3, -3]} color="#050816" speed={0.8} distort={0.5} />
           
           <Environment preset="sunset" />
           <Rig />

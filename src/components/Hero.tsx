@@ -53,70 +53,75 @@ export default function Hero() {
 
   return (
     <section id="home" className={styles.hero} ref={containerRef}>
+      <div className={styles.heroBg}>
+        <Image 
+          src="/hero-luxury.png" 
+          alt="Luxury Ambience" 
+          fill 
+          priority
+          className={styles.heroImg}
+        />
+        <div className={styles.heroOverlay}></div>
+      </div>
+      
       <FloatingScene />
       
-      <span className={styles.heroTopTag}>
-        {t('badge')}
-      </span>
+      <div className={styles.heroContent}>
+        <span className={styles.heroTopTag}>
+          {t('badge')}
+        </span>
 
-      <h1 className={styles.heroTitle}>
-        {t('title')}
-      </h1>
+        <h1 className={styles.heroTitle}>
+          {t('title')}
+        </h1>
 
-      <div className={styles.medallion}>
-        <div className={styles.medallionRing}></div>
-        <div className={styles.medallionRingInner}></div>
-        <svg className={styles.medallionSvg} viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="190" cy="190" r="178" stroke="#C9A227" strokeWidth="1" fill="none" opacity="0.2"/>
-          <g className={styles.leafCrown}>
-            {[...Array(36)].map((_, i) => (
-              <path 
-                key={i} 
-                d="M190 15 C195 25 205 25 200 15 C195 5 185 5 190 15" 
-                fill="#C9A227" 
-                opacity="0.6"
-                transform={`rotate(${i * 10} 190 190)`}
+        <div className={styles.medallion}>
+          <div className={styles.medallionContent}>
+            <div className={styles.grandmaIllustration}>
+              <Image 
+                src="/vovo_maria_illustration.png" 
+                alt="Vovó Maria" 
+                width={160} 
+                height={160} 
+                className={styles.illustrationImg}
               />
-            ))}
-          </g>
-        </svg>
-        <div className={styles.medallionContent}>
-          <div className={styles.grandmaIllustration}>
-            <Image 
-              src="/vovo_maria_illustration.png" 
-              alt="Vovó Maria" 
-              width={160} 
-              height={160} 
-              className={styles.illustrationImg}
-            />
+            </div>
+            <div className={styles.medallionDa}>DA VOVÓ</div>
+            <div className={styles.medallionMaria}>Maria</div>
           </div>
-          <div className={styles.medallionDa}>DA VOVÓ</div>
-          <div className={styles.medallionMaria}>Maria</div>
         </div>
-      </div>
 
-      <div className={styles.heroIcons}>
-        <div className={styles.iconBadge}>
-          <Coffee color="var(--gold)" />
-          <span>{t('features.coffee')}</span>
+        <div className={styles.heroCtaWrapper}>
+          <a href="#reserva" className="btn-primary">
+            {t('cta_book')}
+          </a>
+          <a href="#acomodacoes" className={styles.btnSecondary}>
+            {t('cta_rooms')}
+          </a>
         </div>
-        <div className={styles.iconBadge}>
-          <Key color="var(--gold)" />
-          <span>{t('features.key')}</span>
-        </div>
-        <div className={styles.iconBadge}>
-          <Utensils color="var(--gold)" />
-          <span>{t('features.kitchen')}</span>
-        </div>
-        <div className={styles.iconBadge}>
-          <HeartHandshake color="var(--gold)" />
-          <span>{t('features.welcome')}</span>
+
+        <div className={styles.heroIcons}>
+          <div className={styles.iconBadge}>
+            <Coffee color="var(--secondary)" />
+            <span>{t('features.coffee')}</span>
+          </div>
+          <div className={styles.iconBadge}>
+            <Key color="var(--secondary)" />
+            <span>{t('features.key')}</span>
+          </div>
+          <div className={styles.iconBadge}>
+            <Utensils color="var(--secondary)" />
+            <span>{t('features.kitchen')}</span>
+          </div>
+          <div className={styles.iconBadge}>
+            <HeartHandshake color="var(--secondary)" />
+            <span>{t('features.welcome')}</span>
+          </div>
         </div>
       </div>
 
       <a href="#sobre" className={styles.scrollCue}>
-        <span>{t('cta')}</span>
-        <ChevronDown size={20} />
+        <ChevronDown size={24} />
       </a>
     </section>
   );

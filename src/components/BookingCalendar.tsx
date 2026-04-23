@@ -80,8 +80,8 @@ export default function BookingCalendar({ onSelectRange }: Props) {
         formattedDate = format(day, "d");
         const cloneDay = day;
         const isDisabled = !isSameMonth(day, monthStart) || isBefore(day, startOfToday());
-        const isSelected = (startDate && isSameDay(day, startDate)) || (endDate && isSameDay(day, endDate));
-        const isInRange = startDate && endDate && day > startDate && day < endDate;
+        const isSelected = !!((startDate && isSameDay(day, startDate)) || (endDate && isSameDay(day, endDate)));
+        const isInRange = !!(startDate && endDate && day > startDate && day < endDate);
 
         days.push(
           <button

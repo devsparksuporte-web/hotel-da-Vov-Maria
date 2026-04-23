@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Room } from '@/lib/types/database';
 import BookingSystem from './BookingSystem';
@@ -10,19 +11,19 @@ const ROOMS: Room[] = [
   {
     id: '1',
     name: 'Quarto Standard',
-    description: 'Aconchegante e funcional, perfeito para viajantes que buscam conforto e bom custo-benefício. Inclui cama de casal, ar-condicionado e banheiro privativo.',
-    price_per_night: 180,
+    description: 'Aconchegante e funcional, perfeito para viajantes que buscam conforto e bom custo-benefício. Inclui cama de casal premium, ar-condicionado silencioso e enxoval de alta qualidade.',
+    price_per_night: 220,
     capacity: 2,
-    image_url: '🛏️',
+    image_url: '/quarto-standard.png',
     is_available: true,
   },
   {
     id: '2',
     name: 'Suíte Família',
-    description: 'Espaçosa e bem equipada para famílias ou casais. Possui camas extras, frigobar, varanda e todo o aconchego da Vovó Maria.',
-    price_per_night: 280,
+    description: 'Espaçosa e sofisticada, ideal para famílias ou casais exigentes. Possui varanda privativa, frigobar gourmet e todo o requinte da nossa hospitalidade.',
+    price_per_night: 350,
     capacity: 4,
-    image_url: '🛎️',
+    image_url: '/suite-luxo.png',
     is_available: true,
   },
 ];
@@ -31,37 +32,36 @@ export default function Rooms() {
   const t = useTranslations('Rooms');
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
 
-  const getEmoji = (image_url: string) => {
-    if (image_url.length <= 2) return image_url;
-    if (image_url.includes('suite')) return '🛎️';
-    if (image_url.includes('chale')) return '🌿';
-    return '🛏️';
-  };
-
   return (
     <section id="acomodacoes" className={styles.roomsSection}>
       <div className={styles.roomsHeader}>
-        <p className="section-label" style={{ color: 'var(--gold)' }}>{t('subtitle')}</p>
-        <h2 className="section-title" style={{ color: 'white' }}>{t('title')}</h2>
-        <p>Cada quarto foi decorado com atenção aos detalhes para que você se sinta completamente em casa.</p>
+        <p className="section-label">{t('subtitle')}</p>
+        <h2 className="section-title">{t('title')}</h2>
+        <p>{t('description') || 'Cada detalhe foi planejado para proporcionar uma experiência de repouso absoluto e sofisticação.'}</p>
       </div>
 
       <div className={styles.roomsGrid}>
         {ROOMS.map((room: Room) => (
             <div key={room.id} className={styles.roomCard}>
-              <div className={styles.roomImg}>
-                {getEmoji(room.image_url)}
-                {room.price_per_night < 200 && <span className={styles.roomBadge}>{t('popular')}</span>}
-                {room.price_per_night >= 200 && <span className={styles.roomBadge}>{t('featured')}</span>}
+              <div className={styles.roomImgWrapper}>
+                <Image 
+                  src={room.image_url} 
+                  alt={room.name}
+                  fill
+                  className={styles.roomCardImage}
+                />
+                <span className={styles.roomBadge}>
+                  {room.price_per_night < 300 ? t('popular') : t('featured')}
+                </span>
               </div>
               <div className={styles.roomBody}>
                 <h3>{room.name}</h3>
                 <p>{room.description}</p>
                 <div className={styles.roomAmenities}>
-                  <span className={styles.amenity}>☕ Café incluso</span>
-                  <span className={styles.amenity}>🌬️ Ar-cond.</span>
-                  <span className={styles.amenity}>🚿 Banheiro</span>
-                  <span className={styles.amenity}>👤 {room.capacity} Pessoas</span>
+                  <span className={styles.amenity}>☕ Café Premium</span>
+                  <span className={styles.amenity}>🌬️ Climatização</span>
+                  <span className={styles.amenity}>🛁 Suíte Privativa</span>
+                  <span className={styles.amenity}>👤 {room.capacity} Hóspedes</span>
                 </div>
                 <div className={styles.roomFooter}>
                   <div className={styles.priceWrapper}>
@@ -84,35 +84,36 @@ export default function Rooms() {
         <div style={{
           position: 'fixed',
           inset: 0,
-          backgroundColor: 'rgba(0,0,0,0.85)',
+          backgroundColor: 'rgba(5, 8, 22, 0.9)',
           zIndex: 1000,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '2rem',
-          backdropFilter: 'blur(8px)'
+          backdropFilter: 'blur(12px)'
         }}>
           <div style={{
             position: 'relative',
-            backgroundColor: '#fff',
+            backgroundColor: 'var(--bg-cream)',
             width: '100%',
             maxWidth: '640px',
             maxHeight: '90vh',
             overflowY: 'auto',
             borderRadius: '8px',
-            padding: '2.5rem'
+            padding: '2.5rem',
+            boxShadow: 'var(--shadow-deep)'
           }}>
             <button 
               onClick={() => setSelectedRoom(null)}
               style={{
                 position: 'absolute',
-                top: '1rem',
-                right: '1rem',
+                top: '1.5rem',
+                right: '1.5rem',
                 background: 'none',
                 border: 'none',
-                fontSize: '1.5rem',
+                fontSize: '1.8rem',
                 cursor: 'pointer',
-                color: 'var(--crimson-dark)',
+                color: 'var(--primary)',
                 zIndex: 10
               }}
             >

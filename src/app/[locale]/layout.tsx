@@ -85,6 +85,32 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${lato.variable} ${playfair.variable} ${dancing.variable} font-sans`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Hotel",
+              "name": siteConfig.name,
+              "description": siteConfig.seo.description,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": siteConfig.contact.address,
+                "addressLocality": "Cabo Frio",
+                "addressRegion": "RJ",
+                "addressCountry": "BR"
+              },
+              "telephone": siteConfig.contact.phone,
+              "url": "https://pousadavovomaria.com.br",
+              "image": "https://pousadavovomaria.com.br/hero-luxury.png",
+              "priceRange": "R$ 180 - R$ 400",
+              "starRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+              }
+            })
+          }}
+        />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

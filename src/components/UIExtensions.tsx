@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { siteConfig } from '@/lib/config';
 
 export default function UIExtensions() {
