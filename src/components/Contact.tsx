@@ -12,7 +12,7 @@ export default function Contact() {
         <div className={styles.galleryGrid}>
           <div className={styles.galleryItem}>
             <Image 
-              src="/images/estrutura/piscina-geral.png" 
+              src="/images/estrutura/piscina-geral.jpg" 
               alt="Piscina da Pousada" 
               fill
               className={styles.galleryImage}
@@ -20,7 +20,7 @@ export default function Contact() {
           </div>
           <div className={styles.galleryItem}>
             <Image 
-              src="/images/estrutura/churrasqueira.png" 
+              src="/images/estrutura/churrasqueira.jpg" 
               alt="Área de Churrasco" 
               fill
               className={styles.galleryImage}
@@ -28,7 +28,7 @@ export default function Contact() {
           </div>
           <div className={styles.galleryItem}>
             <Image 
-              src="/images/estrutura/piscina-close.png" 
+              src="/images/estrutura/piscina-close.jpg" 
               alt="Nossa Piscina" 
               fill
               className={styles.galleryImage}
@@ -36,7 +36,7 @@ export default function Contact() {
           </div>
           <div className={styles.galleryItem}>
             <Image 
-              src="/images/estrutura/garagem.png" 
+              src="/images/estrutura/garagem.jpg" 
               alt="Estacionamento e Acesso" 
               fill
               className={styles.galleryImage}

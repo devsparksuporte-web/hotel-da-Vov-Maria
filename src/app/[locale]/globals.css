@@ -1,4 +1,5 @@
 :root {
+  /* Core Palette */
   --primary: #0A1128;
   --primary-dark: #050816;
   --primary-light: #1C2B4B;
@@ -7,8 +8,16 @@
   --secondary-dark: #A6803F;
   --bg-cream: #F9F7F2;
   --text-main: #1A1A1A;
-  --text-muted: #4A4A4A;
+  --text-muted: #333333; /* Darker for better contrast */
   --white: #FFFFFF;
+  
+  /* Backward Compatibility Fallbacks */
+  --gold: var(--secondary);
+  --gold-light: var(--secondary-light);
+  --gold-dark: var(--secondary-dark);
+  --crimson: #8B0000;
+  --crimson-dark: #4A0A0A;
+  --warm-white: var(--bg-cream);
   
   /* Luxury Tokens */
   --glass-bg: rgba(10, 17, 40, 0.05);
@@ -18,6 +27,10 @@
   --shadow-deep: 0 30px 60px rgba(0, 0, 0, 0.12);
   --gradient-luxury: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   --gold-gradient: linear-gradient(135deg, #C5A059 0%, #D4B475 100%);
+}
+
+[id] {
+  scroll-margin-top: 100px; /* Prevents fixed navbar overlap */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
