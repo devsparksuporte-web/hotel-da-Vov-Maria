@@ -27,9 +27,9 @@ const Diferenciais = () => {
   const diferenciais = [
     { icon: '☕', key: 'breakfast' },
     { icon: '🛏️', key: 'comfort' },
+    { icon: '🏊', key: 'pool' },
+    { icon: '🍖', key: 'bbq' },
     { icon: '🔑', key: 'service' },
-    { icon: '🌿', key: 'tranquility' },
-    { icon: '🍰', key: 'gift' },
     { icon: '📍', key: 'location' },
   ];
 

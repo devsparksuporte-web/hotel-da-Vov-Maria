@@ -55,7 +55,32 @@
       "gift": "Welcome Treat",
       "gift_desc": "Every guest receives a special treat from Vovó Maria upon arrival.",
       "location": "Strategic Location",
-      "location_desc": "Easy access to the beaches and tourist spots of Cabo Frio."
+      "location_desc": "Easy access to the beaches and tourist spots of Cabo Frio.",
+      "pool": "Refreshing Pool",
+      "pool_desc": "For sunny days, a clean and inviting pool is always waiting for you.",
+      "bbq": "BBQ and Leisure",
+      "bbq_desc": "Full gourmet area to socialize with your family in unforgettable moments."
+    }
+  },
+  "Reviews": {
+    "subtitle": "What our guests say",
+    "title": "Those who stayed, came back",
+    "items": {
+      "review1": {
+        "text": "“My family and I loved it! From the first moment, we felt at home. The breakfast is wonderful and Grandma Maria is a sweetheart. We've already planned to return next holiday!” 😊",
+        "author": "Sarah & Family",
+        "location": "Belo Horizonte, MG"
+      },
+      "review2": {
+        "text": "\"The best value for money I've found. Clean, fragrant room, hearty breakfast, and impeccable service. I recommend it with eyes closed for the whole family.\"",
+        "author": "Ricardo M.",
+        "location": "São Paulo, SP"
+      },
+      "review3": {
+        "text": "\"We traveled as a family and it was perfect! The kids loved it, the adults really rested. Grandma Maria has a special way of making everyone feel welcome.\"",
+        "author": "Manoella & Family",
+        "location": "Uberlândia, MG"
+      }
     }
   },
   "Booking": {

@@ -55,7 +55,32 @@
       "gift": "Docinho de Boas-Vindas",
       "gift_desc": "Todo hóspede recebe um mimo especial da Vovó Maria ao chegar.",
       "location": "Localização Estratégica",
-      "location_desc": "Fácil acesso às praias e pontos turísticos de Cabo Frio."
+      "location_desc": "Fácil acesso às praias e pontos turísticos de Cabo Frio.",
+      "pool": "Piscina Refrescante",
+      "pool_desc": "Para os dias de sol, uma piscina sempre limpa e convidativa esperando por você.",
+      "bbq": "Churrasqueira e Lazer",
+      "bbq_desc": "Área gourmet completa para confraternizar com sua família em momentos inesquecíveis."
+    }
+  },
+  "Reviews": {
+    "subtitle": "O que dizem nossos hóspedes",
+    "title": "Quem ficou, voltou",
+    "items": {
+      "review1": {
+        "text": "“Eu e minha família adoramos! Desde o primeiro momento nos sentimos em casa. O café da manhã é maravilhoso e a dona Maria é um amor de pessoa. Já até combinamos de voltar no próximo feriado!” 😊",
+        "author": "Sarah e família",
+        "location": "Belo Horizonte, MG"
+      },
+      "review2": {
+        "text": "\"O melhor custo-benefício que já encontrei. Quarto limpo, cheiroso, café farto e atendimento impecável. Recomendo de olhos fechados para toda a família.\"",
+        "author": "Ricardo M.",
+        "location": "São Paulo, SP"
+      },
+      "review3": {
+        "text": "\"Viajamos em família e foi perfeito! As crianças adoraram, os adultos descansaram de verdade. A Vovó Maria tem um jeito especial de fazer todos se sentirem bem-vindos.\"",
+        "author": "Manoella e família",
+        "location": "Uberlândia, MG"
+      }
     }
   },
   "Booking": {

@@ -12,16 +12,32 @@ export default function Contact() {
         <div className={styles.galleryGrid}>
           <div className={styles.galleryItem}>
             <Image 
-              src="/piscina-luxo.png" 
-              alt="Piscina e Lazer" 
+              src="/images/estrutura/piscina-geral.png" 
+              alt="Piscina da Pousada" 
               fill
               className={styles.galleryImage}
             />
           </div>
           <div className={styles.galleryItem}>
             <Image 
-              src="/suite-luxo.png" 
-              alt="Conforto" 
+              src="/images/estrutura/churrasqueira.png" 
+              alt="Área de Churrasco" 
+              fill
+              className={styles.galleryImage}
+            />
+          </div>
+          <div className={styles.galleryItem}>
+            <Image 
+              src="/images/estrutura/piscina-close.png" 
+              alt="Nossa Piscina" 
+              fill
+              className={styles.galleryImage}
+            />
+          </div>
+          <div className={styles.galleryItem}>
+            <Image 
+              src="/images/estrutura/garagem.png" 
+              alt="Estacionamento e Acesso" 
               fill
               className={styles.galleryImage}
             />

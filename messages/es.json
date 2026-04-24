@@ -55,7 +55,32 @@
       "gift": "Dulce de Bienvenida",
       "gift_desc": "Cada huésped recibe un detalle especial de la Vovó Maria al llegar.",
       "location": "Ubicación Estratégica",
-      "location_desc": "Fácil acceso a las playas y puntos turísticos de Cabo Frio."
+      "location_desc": "Fácil acesso às praias e pontos turísticos de Cabo Frio.",
+      "pool": "Piscina Refrescante",
+      "pool_desc": "Para los días de sol, una piscina siempre limpia e invitadora esperando por usted.",
+      "bbq": "Barbacoa y Ocio",
+      "bbq_desc": "Área gourmet completa para compartir con su familia en momentos inolvidables."
+    }
+  },
+  "Reviews": {
+    "subtitle": "Lo que dicen nuestros huéspedes",
+    "title": "Quien se quedó, volvió",
+    "items": {
+      "review1": {
+        "text": "“¡A mi familia y a mí nos encantó! Desde el primer momento nos sentimos como en casa. El desayuno es maravilloso y la abuela Maria es un amor. ¡Ya planeamos volver el próximo feriado!” 😊",
+        "author": "Sarah y familia",
+        "location": "Belo Horizonte, MG"
+      },
+      "review2": {
+        "text": "\"La mejor relación calidad-precio que he encontrado. Habitación limpia, perfumada, desayuno abundante y atención impecable. Recomendado con los ojos cerrados para toda la familia.\"",
+        "author": "Ricardo M.",
+        "location": "São Paulo, SP"
+      },
+      "review3": {
+        "text": "\"Viajamos en familia y fue perfecto! Los niños se divirtieron, los adultos descansaron de verdad. La abuela Maria tiene una forma especial de hacer que todos se sientan bienvenidos.\"",
+        "author": "Manoella y familia",
+        "location": "Uberlândia, MG"
+      }
     }
   },
   "Booking": {
