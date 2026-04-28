@@ -53,7 +53,7 @@ export default function BookingSystem({ room, onClose }: Props) {
     const total = calculateTotal();
 
     const message = [
-      `🏨 *Solicitação de Reserva — Hostel da Vovó Maria*`,
+      `🏨 *Solicitação de Reserva — Pousada da Vovó Maria*`,
       ``,
       `👤 *Nome:* ${name}`,
       phone ? `📱 *Telefone:* ${phone}` : '',

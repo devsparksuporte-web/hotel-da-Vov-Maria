@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Hostel da Vovó Maria",
+  name: "Pousada da Vovó Maria",
   contact: {
     phone: "+55 (22) 99763-3952",
     whatsapp: "5522997633952",
@@ -11,8 +11,8 @@ export const siteConfig = {
     facebook: "https://facebook.com/hostelvovomaria",
   },
   seo: {
-    title: "Hostel da Vovó Maria | Hospedagem de Luxo e Aconchego em Cabo Frio - RJ",
-    description: "Descubra o requinte e a tradição do Hostel da Vovó Maria em Cabo Frio. Suítes exclusivas, café da manhã artesanal e hospitalidade premium. Reserve sua estadia de luxo hoje!",
+    title: "Pousada da Vovó Maria | Hospedagem Aconchegante em Cabo Frio - RJ",
+    description: "Descubra o aconchego e a tradição da Pousada da Vovó Maria em Cabo Frio. Quartos confortáveis, café da manhã artesanal e hospitalidade única. Reserve já!",
     keywords: [
       "hostel de luxo cabo frio",
       "hospedagem premium cabo frio", 
