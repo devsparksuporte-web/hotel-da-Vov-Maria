@@ -68,42 +68,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+  animation: float 4s ease-in-out infinite;
 }
 
-.medallionContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.grandmaIllustration {
-  width: 140px;
-  height: 140px;
+.newLogo {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
   border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--secondary);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-  margin-bottom: 1rem;
-  background: var(--primary);
-}
-
-.illustrationImg {
-  object-fit: cover;
-}
-
-.medallionDa {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--white);
-  opacity: 0.9;
-}
-
-.medallionMaria {
-  font-family: var(--font-dancing), cursive;
-  font-size: 3.5rem;
-  color: var(--secondary-light);
-  margin-top: -0.5rem;
 }
 
 .heroCtaWrapper {
@@ -185,7 +159,8 @@
   .heroIcons {
     display: none;
   }
-  .medallionMaria {
-    font-size: 2.5rem;
+  .newLogo {
+    width: 240px;
+    height: 240px;
   }
 }

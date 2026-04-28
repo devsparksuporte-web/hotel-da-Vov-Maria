@@ -76,19 +76,14 @@ export default function Hero() {
         </h1>
 
         <div className={styles.medallion}>
-          <div className={styles.medallionContent}>
-            <div className={styles.grandmaIllustration}>
-              <Image 
-                src="/vovo_maria_illustration.png" 
-                alt="Vovó Maria" 
-                width={160} 
-                height={160} 
-                className={styles.illustrationImg}
-              />
-            </div>
-            <div className={styles.medallionDa}>DA VOVÓ</div>
-            <div className={styles.medallionMaria}>Maria</div>
-          </div>
+          <Image
+            src="/logo_vovo_maria.png"
+            alt="Pousada da Vovó Maria"
+            width={320}
+            height={320}
+            className={styles.newLogo}
+            priority
+          />
         </div>
 
         <div className={styles.heroCtaWrapper}>
