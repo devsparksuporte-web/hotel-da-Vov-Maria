@@ -1,32 +1,33 @@
 :root {
   /* Core Palette */
-  --primary: #0A1128;
-  --primary-dark: #050816;
-  --primary-light: #1C2B4B;
-  --secondary: #C5A059;
-  --secondary-light: #D4B475;
-  --secondary-dark: #A6803F;
-  --bg-cream: #F9F7F2;
-  --text-main: #1A1A1A;
-  --text-muted: #333333; /* Darker for better contrast */
-  --white: #FFFFFF;
+  --primary: #1b3222;
+  --primary-dark: #0f1c13;
+  --primary-light: #2a4c34;
+  --secondary: #eab95a;
+  --secondary-light: #f3d48d;
+  --secondary-dark: #ba8c35;
+  --brown: #5a351e;
+  --bg-cream: #f8f5ee;
+  --text-main: #1a1a1a;
+  --text-muted: #4a4a4a;
+  --white: #ffffff;
   
   /* Backward Compatibility Fallbacks */
   --gold: var(--secondary);
   --gold-light: var(--secondary-light);
   --gold-dark: var(--secondary-dark);
-  --crimson: #8B0000;
-  --crimson-dark: #4A0A0A;
+  --crimson: var(--brown);
+  --crimson-dark: #3e2414;
   --warm-white: var(--bg-cream);
   
   /* Luxury Tokens */
-  --glass-bg: rgba(10, 17, 40, 0.05);
-  --glass-border: rgba(197, 160, 89, 0.2);
+  --glass-bg: rgba(27, 50, 34, 0.05);
+  --glass-border: rgba(234, 185, 90, 0.2);
   --glass-blur: blur(15px);
   --shadow-luxury: 0 20px 40px rgba(0, 0, 0, 0.08);
   --shadow-deep: 0 30px 60px rgba(0, 0, 0, 0.12);
   --gradient-luxury: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  --gold-gradient: linear-gradient(135deg, #C5A059 0%, #D4B475 100%);
+  --gold-gradient: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
 }
 
 [id] {
@@ -43,7 +44,13 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, .font-playfair {
+h1, h2, h3, h4, .font-lato-heading {
+  font-family: var(--font-lato), sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.font-playfair {
   font-family: var(--font-playfair), serif;
 }
 

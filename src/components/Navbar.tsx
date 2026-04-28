@@ -31,7 +31,7 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
       <nav className={styles.navbar}>
         <Link href="/" className={styles.logo}>
-          Vovó <span>Maria</span>
+          HOSTEL DA VOVÓ <span className={styles.logoCursive}>Maria</span>
         </Link>
         <ul className={styles.navLinks}>
           <li><Link href="#sobre">{t('about')}</Link></li>

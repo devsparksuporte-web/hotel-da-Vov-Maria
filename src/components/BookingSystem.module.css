@@ -14,16 +14,16 @@
 }
 
 .roomHeader h3 {
-  font-family: var(--font-playfair);
+  font-family: var(--font-lato);
   font-size: 1.8rem;
-  color: var(--crimson-dark);
+  color: var(--primary);
   margin-bottom: 0.25rem;
 }
 
 .roomHeader p {
   font-size: 1.4rem;
   font-weight: 900;
-  color: var(--crimson);
+  color: var(--primary);
 }
 
 .roomHeader p span {
@@ -53,8 +53,8 @@
 }
 
 .step.active {
-  color: var(--crimson-dark);
-  background: rgba(201, 162, 39, 0.1);
+  color: var(--primary);
+  background: rgba(234, 185, 90, 0.1);
   border-bottom: 2px solid var(--gold);
 }
 
@@ -82,7 +82,7 @@
 
 .dateRange {
   font-weight: 700;
-  color: var(--crimson-dark);
+  color: var(--primary);
   font-size: 1rem;
   margin-bottom: 0.2rem;
   display: flex;
@@ -105,7 +105,7 @@
 .total {
   font-size: 1.6rem;
   font-weight: 900;
-  color: var(--crimson);
+  color: var(--primary);
   margin-bottom: 1rem;
 }
 
@@ -118,7 +118,7 @@
 .nextBtn {
   width: 100%;
   padding: 0.85rem;
-  background: var(--crimson);
+  background: var(--primary);
   color: white;
   border: none;
   border-radius: 4px;
@@ -141,9 +141,9 @@
 }
 
 .nextBtn:not(:disabled):hover {
-  background: var(--crimson-dark);
+  background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(107, 15, 43, 0.3);
+  box-shadow: 0 6px 16px rgba(27, 50, 34, 0.4);
 }
 
 /* Form step */
@@ -156,7 +156,7 @@
 .backBtn {
   background: none;
   border: none;
-  color: var(--crimson);
+  color: var(--primary);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 700;
@@ -178,7 +178,7 @@
 
 .totalConfirm {
   font-weight: 900;
-  color: var(--crimson);
+  color: var(--primary);
   font-size: 1.1rem;
   margin-top: 0.25rem;
 }
@@ -194,7 +194,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--crimson-dark);
+  color: var(--primary);
   margin-top: 0.5rem;
 }
 

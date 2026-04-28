@@ -3,8 +3,8 @@
     background: #fff;
     border-radius: 8px;
     padding: 20px;
-    border: 1px solid rgba(201, 162, 39, 0.3);
-    box-shadow: 0 4px 20px rgba(107, 15, 43, 0.12);
+    border: 1px solid rgba(234, 185, 90, 0.3);
+    box-shadow: 0 4px 20px rgba(27, 50, 34, 0.12);
     font-family: var(--font-lato);
     color: var(--text-dark);
 }
@@ -22,7 +22,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--crimson);
+    color: var(--primary);
 }
 
 .daysRow {
@@ -56,8 +56,8 @@
 }
 
 .cell:hover:not(.disabled) {
-    background: rgba(201, 162, 39, 0.15);
-    color: var(--crimson-dark);
+    background: rgba(234, 185, 90, 0.15);
+    color: var(--primary);
     font-weight: 700;
 }
 
@@ -69,10 +69,10 @@
 
 .selected {
     background: var(--gold) !important;
-    color: var(--crimson-dark);
+    color: var(--primary-dark);
 }
 
 .inRange {
-    background: rgba(201, 162, 39, 0.1);
+    background: rgba(234, 185, 90, 0.1);
     border-radius: 0;
 }

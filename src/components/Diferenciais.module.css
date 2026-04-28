@@ -41,7 +41,7 @@
 }
 
 .diferencialItem h4 {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-lato), sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--primary);

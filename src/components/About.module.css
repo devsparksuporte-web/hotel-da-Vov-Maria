@@ -43,7 +43,7 @@
 }
 
 .aboutCard h3 {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-lato), sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--secondary-light);
@@ -64,8 +64,8 @@
 }
 
 .statItem {
-  background: rgba(197, 160, 89, 0.08);
-  border: 1px solid rgba(197, 160, 89, 0.2);
+  background: rgba(234, 185, 90, 0.08);
+  border: 1px solid rgba(234, 185, 90, 0.2);
   border-radius: 4px;
   padding: 1.5rem;
   text-align: center;
@@ -73,12 +73,12 @@
 }
 
 .statItem:hover {
-  background: rgba(197, 160, 89, 0.15);
+  background: rgba(234, 185, 90, 0.15);
   transform: translateY(-5px);
 }
 
 .statNum {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-lato), sans-serif;
   font-size: 2.2rem;
   font-weight: 900;
   color: var(--secondary);

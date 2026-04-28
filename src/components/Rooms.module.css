@@ -78,7 +78,7 @@
 }
 
 .roomBody h3 {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-lato), sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary);
@@ -123,7 +123,7 @@
 }
 
 .priceVal {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-lato), sans-serif;
   font-size: 2.2rem;
   font-weight: 900;
   color: var(--secondary-dark);
@@ -153,6 +153,7 @@
 
 .btnReservar:hover {
   background: var(--secondary);
+  color: var(--primary-dark);
   transform: translateX(5px);
 }
 

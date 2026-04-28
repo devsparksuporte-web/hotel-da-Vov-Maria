@@ -82,10 +82,10 @@
   align-items: center;
   justify-content: center;
   color: var(--secondary);
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-lato), sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
-  box-shadow: 0 10px 20px rgba(10, 17, 40, 0.2);
+  box-shadow: 0 10px 20px rgba(27, 50, 34, 0.3);
 }
 
 .authorInfo strong {

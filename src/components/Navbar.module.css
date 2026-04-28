@@ -10,11 +10,11 @@
 
 .headerScrolled {
   padding: 0.8rem 0;
-  background: rgba(10, 17, 40, 0.85);
+  background: rgba(27, 50, 34, 0.92);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(234, 185, 90, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .navbar {
@@ -27,17 +27,25 @@
 }
 
 .logo {
-  font-family: var(--font-playfair), serif;
-  font-size: 1.6rem;
+  font-family: var(--font-lato), sans-serif;
+  font-size: 1.2rem;
   color: var(--white);
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-weight: 900;
+  letter-spacing: 0.1em;
   text-decoration: none;
   text-transform: uppercase;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
-.logo span {
+.logoCursive {
+  font-family: var(--font-dancing), cursive;
   color: var(--secondary);
+  font-size: 2.2rem;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 600;
 }
 
 .navLinks {
@@ -86,12 +94,12 @@
   border-radius: 4px;
   opacity: 1 !important;
   font-weight: 900 !important;
-  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  box-shadow: 0 4px 15px rgba(234, 185, 90, 0.35);
 }
 
 .navCta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4);
+  box-shadow: 0 8px 20px rgba(234, 185, 90, 0.5);
 }
 
 .navCta::after { display: none !important; }

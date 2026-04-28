@@ -13,7 +13,7 @@ export default function Contact() {
           <div className={styles.galleryItem}>
             <Image 
               src="/images/estrutura/piscina-geral.jpg" 
-              alt="Piscina da Pousada" 
+              alt="Piscina do Hostel" 
               fill
               className={styles.galleryImage}
             />
@@ -53,7 +53,7 @@ export default function Contact() {
             allowFullScreen={true} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="Localização da Pousada da Vovó Maria"
+            title="Localização do Hostel da Vovó Maria"
           ></iframe>
         </div>
 

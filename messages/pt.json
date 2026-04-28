@@ -7,8 +7,8 @@
     "book": "Reservar"
   },
   "Hero": {
-    "badge": "✦ Pousada da Vovó Maria ✦",
-    "title": "POUSADA DA VOVÓ MARIA",
+    "badge": "✦ Hostel da Vovó Maria ✦",
+    "title": "HOSTEL DA VOVÓ MARIA",
     "subtitle": "Tradição, conforto e o carinho que só a Vovó Maria oferece.",
     "cta": "Descobrir",
     "cta_book": "Reservar Agora",
@@ -23,8 +23,8 @@
   "About": {
     "subtitle": "Nossa História",
     "title": "Acolhimento com Alma",
-    "p1": "A Pousada da Vovó Maria nasceu do sonho de oferecer muito mais do que uma simples hospedagem. Aqui, cada hóspede é tratado como parte da família — com carinho, respeito e toda a dedicação que você merece.",
-    "p2": "Localizada em um ambiente tranquilo e acolhedor, nossa pousada combina o charme rústico com todo o conforto moderno.",
+    "p1": "O Hostel da Vovó Maria nasceu do sonho de oferecer muito mais do que uma simples hospedagem. Aqui, cada hóspede é tratado como parte da família — com carinho, respeito e toda a dedicação que você merece.",
+    "p2": "Localizado em um ambiente tranquilo e acolhedor, nosso hostel combina o charme rústico com todo o conforto moderno.",
     "stats": {
       "rooms": "12 Quartos",
       "rating": "5★ Avaliação",

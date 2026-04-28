@@ -26,8 +26,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10, 17, 40, 0.4) 0%,
-    rgba(10, 17, 40, 0.8) 100%
+    rgba(27, 50, 34, 0.4) 0%,
+    rgba(15, 28, 19, 0.8) 100%
   );
 }
 
@@ -53,7 +53,7 @@
 }
 
 .heroTitle {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-lato), sans-serif;
   font-size: clamp(3.5rem, 12vw, 8rem);
   font-weight: 900;
   line-height: 0.9;

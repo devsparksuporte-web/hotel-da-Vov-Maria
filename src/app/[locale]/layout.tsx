@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title: siteConfig.seo.title,
   description: siteConfig.seo.description,
   keywords: siteConfig.seo.keywords,
-  metadataBase: new URL('https://pousadavovomaria.com.br'),
+  metadataBase: new URL('https://hostelvovomaria.com.br'),
   alternates: {
     canonical: '/',
     languages: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
-    url: 'https://pousadavovomaria.com.br',
+    url: 'https://hostelvovomaria.com.br',
     siteName: siteConfig.name,
     images: [
       {
@@ -101,8 +101,8 @@ export default async function RootLayout({
                 "addressCountry": "BR"
               },
               "telephone": siteConfig.contact.phone,
-              "url": "https://pousadavovomaria.com.br",
-              "image": "https://pousadavovomaria.com.br/hero-luxury.png",
+              "url": "https://hostelvovomaria.com.br",
+              "image": "https://hostelvovomaria.com.br/hero-luxury.png",
               "priceRange": "R$ 180 - R$ 400",
               "starRating": {
                 "@type": "Rating",
